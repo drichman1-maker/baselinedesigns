@@ -1398,3 +1398,40 @@ lastScroll = currentScroll;
 </script>
 </body>
 </html>
+
+<style>
+/* EMERGENCY WHITESPACE FIX */
+section, .section, .hero, .content {
+padding: 40px 20px !important;
+margin: 0 !important;
+min-height: auto !important;
+}
+
+.spacer, .divider, [class*="spacer"], [class*="divider"] {
+display: none !important;
+height: 0 !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+
+.mb-8, .mb-12, .mb-16, .mb-20, .mb-24 {
+margin-bottom: 20px !important;
+}
+
+.py-16, .py-20, .py-24, .py-32 {
+padding-top: 40px !important;
+padding-bottom: 40px !important;
+}
+
+/* Remove empty sections */
+section:empty, div:empty {
+display: none !important;
+}
+
+/* Mobile card fix */
+.solo-card, [data-card="solo"], .team-card {
+position: relative !important;
+margin: 20px auto !important;
+display: block !important;
+}
+</style>
