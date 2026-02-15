@@ -1043,20 +1043,20 @@ I take on a limited number of projects each quarter. If you have a brand, websit
 
 <!-- Social Links -->
 <div>
-<div class="text-sm text-[var(--text-muted)] uppercase tracking-wider mb-4 font-medium">Connect</div>
+<div class="text-sm text-[var(--text-muted)] uppercase tracking-wider mb-4 font-medium">Coming Soon</div>
 <div class="flex gap-3">
-<a href="#" class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all magnetic-btn mobile-tap" data-magnetic aria-label="Twitter">
+<button disabled class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center opacity-50 cursor-not-allowed" aria-label="Twitter Coming Soon">
 <i data-lucide="twitter" class="w-5 h-5"></i>
-</a>
-<a href="#" class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all magnetic-btn mobile-tap" data-magnetic aria-label="Instagram">
+</button>
+<button disabled class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center opacity-50 cursor-not-allowed" aria-label="Instagram Coming Soon">
 <i data-lucide="instagram" class="w-5 h-5"></i>
-</a>
-<a href="#" class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all magnetic-btn mobile-tap" data-magnetic aria-label="LinkedIn">
+</button>
+<button disabled class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center opacity-50 cursor-not-allowed" aria-label="LinkedIn Coming Soon">
 <i data-lucide="linkedin" class="w-5 h-5"></i>
-</a>
-<a href="#" class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all magnetic-btn mobile-tap" data-magnetic aria-label="Dribbble">
+</button>
+<button disabled class="w-12 h-12 rounded-full border-2 border-[var(--border)] flex items-center justify-center opacity-50 cursor-not-allowed" aria-label="Dribbble Coming Soon">
 <i data-lucide="dribbble" class="w-5 h-5"></i>
-</a>
+</button>
 </div>
 </div>
 </div>
@@ -1067,11 +1067,23 @@ I take on a limited number of projects each quarter. If you have a brand, websit
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="block text-sm font-medium uppercase tracking-wider">Name</label>
-<input type="text" required class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base" placeholder="Your name">
+<input type="text" required 
+  class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base peer" 
+  placeholder="Your name"
+  pattern="^[a-zA-Z\s]{2,}$"
+  title="Please enter a valid name (minimum 2 letters)"
+>
+<p class="mt-1 text-sm text-[var(--error)] invisible peer-invalid:visible">Please enter a valid name</p>
 </div>
 <div class="space-y-2">
 <label class="block text-sm font-medium uppercase tracking-wider">Email</label>
-<input type="email" required class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base" placeholder="your@email.com">
+<input type="email" required
+  class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base peer"
+  placeholder="your@email.com"
+  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+  title="Please enter a valid email address"
+>
+<p class="mt-1 text-sm text-[var(--error)] invisible peer-invalid:visible">Please enter a valid email address</p>
 </div>
 </div>
 
