@@ -949,7 +949,7 @@ Bringing products to life through 3D, rendering, and interactive experiences. Fr
 <div>
 <span class="text-sm uppercase tracking-widest text-[var(--text-muted)] font-medium mb-4 block">Working Together</span>
 <h2 class="text-4xl md:text-5xl lg:text-6xl font-[var(--font-display)] font-bold mb-8 leading-tight">
-How I work<br>
+How we partner<br>
 <span class="text-[var(--text-muted)]">with clients.</span>
 </h2>
 
@@ -1433,5 +1433,25 @@ display: none !important;
 position: relative !important;
 margin: 20px auto !important;
 display: block !important;
+}
+</style>
+
+<style>
+/* EMERGENCY WHITESPACE FIX - TARGETED */
+section:has(h2:contains("What We Do")) + section,
+section:has(span:contains("Working Together")) {
+padding-top: 40px !important;
+padding-bottom: 40px !important;
+margin-top: 0 !important;
+margin-bottom: 0 !important;
+}
+
+section {
+padding: 40px 20px !important;
+}
+
+/* Remove giant gaps between sections */
+section + section {
+margin-top: 0 !important;
 }
 </style>
