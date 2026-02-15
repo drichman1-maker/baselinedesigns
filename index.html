@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baseline Designs — Independent Designer & Visual Systems</title>
+<title>Baseline Designs — Design Studio & Visual Systems</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -366,6 +366,37 @@ max-width: 75ch;
 margin-left: auto;
 margin-right: auto;
 }
+/* Team Framing & Mobile Fixes */
+.solo-card, [data-card="solo"] {
+display: none !important;
+}
+
+section {
+padding: 60px 20px !important;
+min-height: auto !important;
+}
+
+.hero {
+padding-top: 100px !important;
+padding-bottom: 60px !important;
+min-height: 60vh !important;
+}
+
+@media (max-width: 768px) {
+body {
+overflow-x: hidden !important;
+}
+h1 {
+font-size: 2.5rem !important;
+line-height: 1.2 !important;
+}
+h2 {
+font-size: 2rem !important;
+}
+section {
+padding: 40px 16px !important;
+}
+}
 </style>
 </head>
 <body data-theme="minimal">
@@ -474,7 +505,7 @@ BASELINE<span class="text-[var(--text-muted)]">.</span>
 <!-- Value Proposition - Front loaded -->
 <div class="mb-8">
 <span class="inline-block px-4 py-2 rounded-full border border-[var(--border-strong)] text-sm font-medium text-[var(--text-secondary)] mb-8 hero-anim">
-Independent Design Studio
+Collaborative Design Studio
 </span>
 </div>
 
@@ -728,7 +759,7 @@ Start a Conversation <i data-lucide="arrow-right" class="w-5 h-5"></i>
 <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-[var(--accent)] rounded-[var(--radius)] flex flex-col items-center justify-center text-[var(--bg-primary)] p-6 text-center shadow-xl">
 <i data-lucide="user" class="w-10 h-10 mb-2"></i>
 <div class="text-sm font-medium uppercase tracking-wider">Solo</div>
-<div class="text-xs opacity-80">Independent</div>
+<div class="text-xs opacity-80">Collaborative</div>
 </div>
 </div>
 
@@ -750,7 +781,7 @@ From exotic cars
 </div>
 <div>
 <h4 class="font-[var(--font-display)] font-bold text-lg mb-2">Product Visualization Background</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">Years spent designing collectible and luxury vehicles taught me precision, surfacing, and how light interacts with form. That obsession with craft now informs every digital project.</p>
+<p class="text-[var(--text-secondary)] leading-relaxed">Years spent designing collectible and luxury vehicles taught us precision, surfacing, and how light interacts with form. That obsession with craft now informs every digital project.</p>
 </div>
 </div>
 
@@ -759,7 +790,7 @@ From exotic cars
 <i data-lucide="user-check" class="w-5 h-5 text-[var(--accent)]"></i>
 </div>
 <div>
-<h4 class="font-[var(--font-display)] font-bold text-lg mb-2">Independent & Hands-On</h4>
+<h4 class="font-[var(--font-display)] font-bold text-lg mb-2">Collaborative & Hands-On</h4>
 <p class="text-[var(--text-secondary)] leading-relaxed">This is a personal studio — when you hire me, you work directly with me. No account managers, no handoffs. I collaborate with specialists when projects demand it, but the vision stays consistent.</p>
 </div>
 </div>
@@ -806,7 +837,7 @@ From exotic cars
 <!-- Section Header - IMPROVED: Centered, stronger -->
 <div class="section-header text-center max-w-3xl mx-auto">
 <span class="text-sm uppercase tracking-widest text-[var(--text-muted)] font-medium mb-4 block">Capabilities</span>
-<h2 class="text-5xl md:text-6xl lg:text-7xl font-[var(--font-display)] font-bold mb-6">What I Do</h2>
+<h2 class="text-5xl md:text-6xl lg:text-7xl font-[var(--font-display)] font-bold mb-6">What We Do</h2>
 <p class="text-xl text-[var(--text-secondary)] leading-relaxed">Strategic design services for brands that value craft and clarity. Each engagement is tailored to your specific challenges.</p>
 </div>
 
@@ -851,7 +882,7 @@ Distinctive web experiences that balance beauty with function. Designed to conve
 </div>
 <h3 class="text-2xl font-[var(--font-display)] font-bold mb-4">Frontend Development</h3>
 <p class="text-[var(--text-secondary)] leading-relaxed mb-6 flex-grow">
-Clean, performant code that brings designs to life. I build what I design, ensuring fidelity and attention to detail.
+Clean, performant code that brings designs to life. I build what We design, ensuring fidelity and attention to detail.
 </p>
 <ul class="space-y-2 text-sm text-[var(--text-muted)]">
 <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--success)]"></i> HTML/CSS/JS</li>
@@ -1061,7 +1092,7 @@ I take on a limited number of projects each quarter. If you have a brand, websit
 </div>
 
 <div class="space-y-2">
-<label class="block text-sm font-medium uppercase tracking-wider">Tell me about your project</label>
+<label class="block text-sm font-medium uppercase tracking-wider">Tell us about your project</label>
 <textarea rows="5" required class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors resize-none text-base" placeholder="What are you building? What challenges are you facing? What's your timeline?"></textarea>
 </div>
 
@@ -1088,7 +1119,7 @@ Prefer to email directly? <a href="mailto:hello@baselinedesigns.com" class="unde
 BASELINE<span class="text-[var(--text-muted)]">.</span>
 </div>
 <p class="text-[var(--text-secondary)] max-w-md leading-relaxed mb-6">
-Independent design studio crafting brand identities and digital experiences. Personal attention, cross-disciplinary craft, and a focus on lasting quality.
+Collaborative design studio crafting brand identities and digital experiences. Personal attention, cross-disciplinary craft, and a focus on lasting quality.
 </p>
 <div class="flex gap-6 text-sm font-medium">
 <a href="#" class="hover:text-[var(--accent)] transition-colors">Privacy</a>
@@ -1125,7 +1156,7 @@ Independent design studio crafting brand identities and digital experiences. Per
 
 <div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
 <div class="text-sm text-[var(--text-muted)]">
-© 2026 Baseline Designs. Independent designer.
+© 2026 Baseline Designs. Collaborative designer.
 </div>
 <div class="text-sm text-[var(--text-muted)]">
 Crafted with precision. Designed to endure.
