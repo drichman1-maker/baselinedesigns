@@ -151,6 +151,11 @@ border-radius: 3px;
 background: var(--text-primary);
 }
 
+/* Fixed header offset for anchor links */
+section {
+scroll-margin-top: 100px;
+}
+
 /* Container padding */
 .container {
 padding-left: 1rem;
@@ -943,7 +948,7 @@ Bringing products to life through 3D, rendering, and interactive experiences. Fr
 </section>
 
 <!-- Approach Section - NEW: Replaces testimonials with process/philosophy -->
-<section class="px-6 lg:px-12 bg-[var(--bg-secondary)]" style="padding-top: 40px; margin-top: 0;">
+<section class="px-6 lg:px-12 bg-[var(--bg-secondary)]">
 <div class="container mx-auto max-w-7xl">
 <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 <div>
@@ -989,11 +994,11 @@ How we partner<br>
 </div>
 
 <div class="relative">
-<div class="aspect-square rounded-[var(--radius)] bg-[var(--bg-tertiary)] overflow-hidden relative flex items-center justify-center p-12">
+<div class="min-h-[500px] rounded-[var(--radius)] bg-[var(--bg-tertiary)] overflow-hidden relative flex items-center justify-center p-8 md:p-12">
 <div class="absolute inset-0 grid-pattern opacity-30"></div>
-<div class="text-center relative z-10">
-<i data-lucide="message-circle" class="w-24 h-24 text-[var(--accent)] mx-auto mb-6"></i>
-<blockquote class="text-2xl md:text-3xl font-[var(--font-display)] font-medium leading-tight mb-6">
+<div class="text-center relative z-10 max-w-2xl">
+<i data-lucide="message-circle" class="w-16 h-16 md:w-24 md:h-24 text-[var(--accent)] mx-auto mb-4 md:mb-6"></i>
+<blockquote class="text-xl md:text-2xl lg:text-3xl font-[var(--font-display)] font-medium leading-tight mb-4 md:mb-6">
 "The best design relationships feel like true partnerships — aligned on goals, honest in feedback, and committed to excellence."
 </blockquote>
 <div class="text-[var(--text-muted)] uppercase tracking-widest text-sm">My Philosophy</div>
