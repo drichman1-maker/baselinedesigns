@@ -1480,3 +1480,55 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+<style>
+/* AGGRESSIVE WHITESPACE FIX - between What We Do and Working Together */
+#services {
+padding-bottom: 20px !important;
+}
+
+#services + section {
+padding-top: 20px !important;
+margin-top: 0 !important;
+}
+
+section:has(> div > span:contains("Working Together")),
+section:has(h2:contains("How we partner")) {
+padding-top: 40px !important;
+margin-top: 0 !important;
+}
+
+/* Service cards reduce margin */
+.feature-card {
+margin-bottom: 10px !important;
+}
+
+/* Remove giant grid gaps */
+.grid {
+gap: 10px !important;
+}
+
+/* Section bottom padding */
+section {
+padding-bottom: 40px !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove excessive padding between sections
+  const servicesSection = document.getElementById('services');
+  if (servicesSection) {
+    servicesSection.style.paddingBottom = '20px';
+  }
+  
+  // Find Working Together section and reduce padding
+  const sections = document.querySelectorAll('section');
+  sections.forEach(function(section) {
+    if (section.textContent.includes('Working Together')) {
+      section.style.paddingTop = '40px';
+      section.style.marginTop = '0';
+    }
+  });
+});
+</script>
