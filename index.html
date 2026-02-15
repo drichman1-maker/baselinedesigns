@@ -1455,3 +1455,28 @@ section + section {
 margin-top: 0 !important;
 }
 </style>
+
+<script>
+// EMERGENCY WHITESPACE REMOVAL
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove excessive padding/margin from all sections after What We Do
+  const sections = document.querySelectorAll('section');
+  sections.forEach(function(section) {
+    section.style.padding = '40px 20px';
+    section.style.margin = '0';
+    section.style.minHeight = 'auto';
+  });
+  
+  // Specifically target the Approach/Working Together section
+  const workingTogether = document.querySelector('section:has(span:contains("Working Together"))');
+  if (workingTogether) {
+    workingTogether.style.paddingTop = '40px';
+    workingTogether.style.marginTop = '0';
+  }
+  
+  // Kill GSAP animations that add spacing
+  if (typeof gsap !== 'undefined') {
+    gsap.globalTimeline.clear();
+  }
+});
+</script>
