@@ -3,7 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baseline Designs — Design Studio & Visual Systems</title>
+<title>Baseline Designs — Independent Design Studio</title>
+<meta name="description" content="An independent design studio. Brand identity, websites, and visual systems for founders, artists, and small firms that care what things look like up close.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baseline Designs">
+<meta property="og:title" content="Baseline Designs — Independent Design Studio">
+<meta property="og:description" content="Brand identity, websites, and visual systems for founders, artists, and small firms that care what things look like up close.">
+<meta property="og:url" content="https://www.baselinedesigns.com/">
+<meta property="og:image" content="https://www.baselinedesigns.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Baseline Designs — Independent Design Studio">
+<meta name="twitter:description" content="Brand identity, websites, and visual systems for founders, artists, and small firms that care what things look like up close.">
+<meta name="twitter:image" content="https://www.baselinedesigns.com/images/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -245,25 +267,6 @@ margin-bottom: 0.75em;
 transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Cursor follower - preserved */
-.cursor-follower {
-width: 20px;
-height: 20px;
-border: 2px solid var(--accent);
-border-radius: 50%;
-position: fixed;
-pointer-events: none;
-z-index: 9997;
-transition: transform 0.15s ease-out, width 0.3s, height 0.3s, border-color 0.3s;
-mix-blend-mode: difference;
-}
-.cursor-follower.hover {
-width: 60px;
-height: 60px;
-background: var(--accent);
-opacity: 0.1;
-}
-
 /* Theme transition - preserved */
 .theme-transition {
 position: fixed;
@@ -311,24 +314,6 @@ animation: morph 8s ease-in-out infinite;
 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
 }
 
-/* Loader - preserved */
-.loader {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: var(--bg-primary);
-z-index: 10000;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: opacity 0.5s, visibility 0.5s;
-}
-.loader.hidden {
-opacity: 0;
-visibility: hidden;
-}
 
 /* NEW: Better content spacing utilities */
 .content-block {
@@ -408,16 +393,8 @@ padding: 40px 16px !important;
 </head>
 <body data-theme="minimal">
 
-<!-- Loader -->
-<div class="loader" id="loader">
-<div class="text-2xl font-bold tracking-tighter font-[var(--font-display)]">BASELINE<span class="text-[var(--text-muted)]">.</span></div>
-</div>
-
 <!-- Theme Transition Overlay -->
 <div class="theme-transition" id="themeTransition"></div>
-
-<!-- Custom Cursor -->
-<div class="cursor-follower" id="cursor"></div>
 
 <!-- Navigation - IMPROVED: Better spacing, mobile optimization -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-[var(--border)] px-6 lg:px-12 py-4 flex justify-between items-center" id="navbar">
@@ -510,7 +487,7 @@ BASELINE<span class="text-[var(--text-muted)]">.</span>
 <!-- Value Proposition - Front loaded -->
 <div class="mb-8">
 <span class="inline-block px-4 py-2 rounded-full border border-[var(--border-strong)] text-sm font-medium text-[var(--text-secondary)] mb-8 hero-anim">
-Collaborative Design Studio
+Independent Design Studio
 </span>
 </div>
 
@@ -525,7 +502,7 @@ Visual Systems
 <!-- Subheadline - IMPROVED: Prominent, clear value prop -->
 <div class="max-w-2xl mb-12 hero-anim">
 <p class="text-xl md:text-2xl text-[var(--text-secondary)] leading-relaxed font-light">
-We're a collaborative design studio blending years of product visualization experience with thoughtful digital design. Focused on brand identity, websites, and visual systems for discerning clients.
+I'm an independent designer blending years of product visualization experience with thoughtful digital design. Focused on brand identity, websites, and visual systems for discerning clients.
 </p>
 </div>
 
@@ -557,6 +534,11 @@ See work
 <div class="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">Focus</div>
 <div class="text-lg font-[var(--font-display)] font-medium">Quality Over Quantity</div>
 <div class="text-sm text-[var(--text-muted)] mt-1">Select projects, long-term thinking</div>
+</div>
+<div>
+<div class="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">Engagements</div>
+<div class="text-lg font-[var(--font-display)] font-medium">From $15k</div>
+<div class="text-sm text-[var(--text-muted)] mt-1">Local business sites fixed-scope → <a href="https://sales.baselinedesigns.com" target="_blank" rel="noopener" class="underline decoration-[var(--border-strong)] underline-offset-4 hover:text-[var(--accent)]">sales.baselinedesigns.com</a></div>
 </div>
 </div>
 </div>
@@ -617,7 +599,7 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 <!-- Projects Grid - 3 recent shipped projects -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 <!-- Project 1: Chloe Avenaim — Large -->
-<a href="https://www.chloe-avenaim.com" target="_blank" rel="noopener" class="project-card group lg:col-span-2 block" data-cursor="hover">
+<a href="https://www.chloe-avenaim.com" target="_blank" rel="noopener" class="project-card group lg:col-span-2 block">
 <div class="relative aspect-[21/9] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-8 border border-[var(--border)]">
 <img src="images/chloe.jpg" alt="Chloe Avenaim — portfolio and booking site" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-[1.02] transition-transform duration-700" />
 <div class="absolute top-6 left-6 flex gap-3">
@@ -644,7 +626,7 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 </a>
 
 <!-- Project 2: Stéphane Vice -->
-<a href="https://www.stephanevice.com" target="_blank" rel="noopener" class="project-card group block" data-cursor="hover">
+<a href="https://www.stephanevice.com" target="_blank" rel="noopener" class="project-card group block">
 <div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6 border border-[var(--border)]">
 <img src="images/stephanevice.jpg" alt="Can Art by Stéphane Vice — upcycled aluminum sculpture portfolio" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-[1.02] transition-transform duration-700" />
 <div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Fine Art</div>
@@ -658,9 +640,24 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 </div>
 </a>
 
-<!-- Slot 3: Your project next — CTA card keeps grid balanced -->
-<a href="#contact" class="project-card group block lg:mt-16" data-cursor="hover">
-<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-tertiary)] mb-6 border-2 border-dashed border-[var(--border-strong)] flex items-center justify-center">
+<!-- Project 3: LGI Consultant Group -->
+<a href="https://www.lgiconsultantgroup.com" target="_blank" rel="noopener" class="project-card group block">
+<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6 border border-[var(--border)]">
+<img src="images/lgi.jpg" alt="LGI Consultant Group — automotive lab site" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-[1.02] transition-transform duration-700" />
+<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Automotive</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-start gap-4">
+<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">LGI Consultant Group</h3>
+<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+</div>
+<p class="text-[var(--text-secondary)] leading-relaxed">An automotive lab building exotic and performance cars — a dark, confident site that matches the precision of the work on the shop floor.</p>
+</div>
+</a>
+
+<!-- Slot 4: Your project next — CTA card spans full width -->
+<a href="#contact" class="project-card group block lg:col-span-2">
+<div class="relative aspect-[21/9] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-tertiary)] mb-6 border-2 border-dashed border-[var(--border-strong)] flex items-center justify-center">
 <div class="absolute inset-0 grid-pattern opacity-20"></div>
 <div class="text-center relative z-10 px-6">
 <div class="w-16 h-16 rounded-full bg-[var(--accent)] text-[var(--bg-primary)] flex items-center justify-center mx-auto mb-4 transform group-hover:rotate-45 transition-transform duration-500">
@@ -675,7 +672,7 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 <h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">Have something in mind?</h3>
 <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Start ↗</span>
 </div>
-<p class="text-[var(--text-secondary)] leading-relaxed">We take on a small number of brand, web, and product projects each quarter. Tell us what you're building.</p>
+<p class="text-[var(--text-secondary)] leading-relaxed">I take on a small number of brand, web, and product projects each quarter. Tell me what you're building.</p>
 </div>
 </a>
 </div>
@@ -684,7 +681,7 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 <div class="mt-24 text-center">
 <div class="max-w-2xl mx-auto mb-8">
 <h3 class="text-3xl md:text-4xl font-[var(--font-display)] font-bold mb-4">Have a project in mind?</h3>
-<p class="text-[var(--text-secondary)] text-lg">We work with a select number of clients each quarter to ensure dedicated attention and exceptional results.</p>
+<p class="text-[var(--text-secondary)] text-lg">I work with a select number of clients each quarter to ensure dedicated attention and exceptional results.</p>
 </div>
 <a href="#contact" class="magnetic-btn inline-flex px-10 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all items-center gap-3 text-lg mobile-tap" data-magnetic>
 Start a project <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -715,7 +712,7 @@ Start a project <i data-lucide="arrow-right" class="w-5 h-5"></i>
 <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-[var(--accent)] rounded-[var(--radius)] flex flex-col items-center justify-center text-[var(--bg-primary)] p-6 text-center shadow-xl">
 <i data-lucide="user" class="w-10 h-10 mb-2"></i>
 <div class="text-sm font-medium uppercase tracking-wider">Solo</div>
-<div class="text-xs opacity-80">Collaborative</div>
+<div class="text-xs opacity-80">Practice</div>
 </div>
 </div>
 
@@ -737,7 +734,7 @@ From exotic cars
 </div>
 <div>
 <h4 class="font-[var(--font-display)] font-bold text-lg mb-2">Product Visualization Background</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">Years spent designing collectible and luxury vehicles taught us precision, surfacing, and how light interacts with form. That obsession with craft now informs every digital project.</p>
+<p class="text-[var(--text-secondary)] leading-relaxed">Years spent designing collectible and luxury vehicles taught me precision, surfacing, and how light interacts with form. That obsession with craft now informs every digital project.</p>
 </div>
 </div>
 
@@ -746,8 +743,8 @@ From exotic cars
 <i data-lucide="user-check" class="w-5 h-5 text-[var(--accent)]"></i>
 </div>
 <div>
-<h4 class="font-[var(--font-display)] font-bold text-lg mb-2">Collaborative & Hands-On</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">This is a collaborative studio — you work directly with our team. No account managers, no handoffs. We collaborate with specialists when projects demand it, but the vision stays consistent.</p>
+<h4 class="font-[var(--font-display)] font-bold text-lg mb-2">Direct & Hands-On</h4>
+<p class="text-[var(--text-secondary)] leading-relaxed">This is an independent studio — you work directly with me. No account managers, no handoffs. I bring in trusted specialists when projects demand it, but the vision stays consistent.</p>
 </div>
 </div>
 
@@ -757,7 +754,7 @@ From exotic cars
 </div>
 <div>
 <h4 class="font-[var(--font-display)] font-bold text-lg mb-2">Quality Over Quantity</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">We take on a limited number of projects to ensure each receives deep thinking and meticulous execution. The goal isn't volume — it's work that lasts and relationships that grow.</p>
+<p class="text-[var(--text-secondary)] leading-relaxed">I take on a limited number of projects to ensure each receives deep thinking and meticulous execution. The goal isn't volume — it's work that lasts and relationships that grow.</p>
 </div>
 </div>
 </div>
@@ -800,7 +797,7 @@ Need a site, not a<br>
 <span class="text-[var(--text-muted)]">six-month engagement?</span>
 </h2>
 <p class="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mb-8">
-For local businesses we offer a separate, fixed-scope service: a custom website for a one-time payment. No retainers, no monthly fees. Same craft, tighter scope.
+For local businesses I offer a separate, fixed-scope service: a custom website for a one-time payment. No retainers, no monthly fees. Same craft, tighter scope.
 </p>
 <a href="https://sales.baselinedesigns.com" target="_blank" rel="noopener" class="magnetic-btn inline-flex px-10 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all items-center gap-3 text-lg mobile-tap" data-magnetic>
 See pricing & examples <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
@@ -835,7 +832,7 @@ Let's create<br>
 
 <div class="space-y-6 mb-12">
 <p class="text-xl text-[var(--text-secondary)] leading-relaxed max-w-lg">
-We take on a limited number of projects each quarter. If you have a brand, website, or product that needs thoughtful design, we'd love to hear about it.
+I take on a limited number of projects each quarter. Studio engagements typically start at $15k. If you have a brand, website, or product that needs thoughtful design, I'd love to hear about it.
 </p>
 
 <!-- Quick contact options -->
@@ -947,7 +944,7 @@ Prefer to email directly? <a href="mailto:hello@baselinedesigns.com" class="unde
 BASELINE<span class="text-[var(--text-muted)]">.</span>
 </div>
 <p class="text-[var(--text-secondary)] max-w-md leading-relaxed mb-6">
-Collaborative design studio crafting brand identities and digital experiences. Personal attention, cross-disciplinary craft, and a focus on lasting quality.
+Independent design studio crafting brand identities and digital experiences. Personal attention, cross-disciplinary craft, and a focus on lasting quality.
 </p>
 <div class="flex gap-6 text-sm font-medium">
 <a href="#" class="hover:text-[var(--accent)] transition-colors">Privacy</a>
@@ -977,7 +974,7 @@ Collaborative design studio crafting brand identities and digital experiences. P
 
 <div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
 <div class="text-sm text-[var(--text-muted)]">
-© 2026 Baseline Designs. Collaborative designer.
+© 2026 Baseline Designs. Independent designer.
 </div>
 <div class="text-sm text-[var(--text-muted)]">
 Crafted with precision. Designed to endure.
@@ -990,42 +987,10 @@ Crafted with precision. Designed to endure.
 // Initialize Lucide icons
 lucide.createIcons();
 
-// Loader
+// Kick off animations on load
 window.addEventListener('load', () => {
-const loader = document.getElementById('loader');
-setTimeout(() => {
-loader.classList.add('hidden');
 initAnimations();
-}, 800);
 });
-
-// Custom cursor (desktop only)
-const cursor = document.getElementById('cursor');
-if (window.matchMedia('(pointer: fine)').matches) {
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-
-document.addEventListener('mousemove', (e) => {
-mouseX = e.clientX;
-mouseY = e.clientY;
-});
-
-function animateCursor() {
-cursorX += (mouseX - cursorX) * 0.1;
-cursorY += (mouseY - cursorY) * 0.1;
-cursor.style.left = cursorX - 10 + 'px';
-cursor.style.top = cursorY - 10 + 'px';
-requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-document.querySelectorAll('[data-cursor="hover"]').forEach(el => {
-el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-});
-} else {
-cursor.style.display = 'none';
-}
 
 // Magnetic buttons (desktop only)
 if (window.matchMedia('(pointer: fine)').matches) {
@@ -1238,148 +1203,3 @@ lastScroll = currentScroll;
 </script>
 </body>
 </html>
-
-<style>
-/* EMERGENCY WHITESPACE FIX */
-section, .section, .hero, .content {
-padding: 40px 20px !important;
-margin: 0 !important;
-min-height: auto !important;
-}
-
-.spacer, .divider, [class*="spacer"], [class*="divider"] {
-display: none !important;
-height: 0 !important;
-margin: 0 !important;
-padding: 0 !important;
-}
-
-.mb-8, .mb-12, .mb-16, .mb-20, .mb-24 {
-margin-bottom: 20px !important;
-}
-
-.py-16, .py-20, .py-24, .py-32 {
-padding-top: 40px !important;
-padding-bottom: 40px !important;
-}
-
-/* Remove empty sections */
-section:empty, div:empty {
-display: none !important;
-}
-
-/* Mobile card fix */
-.solo-card, [data-card="solo"], .team-card {
-position: relative !important;
-margin: 20px auto !important;
-display: block !important;
-}
-</style>
-
-<style>
-/* EMERGENCY WHITESPACE FIX - TARGETED */
-section:has(h2:contains("What We Do")) + section,
-section:has(span:contains("Working Together")) {
-padding-top: 40px !important;
-padding-bottom: 40px !important;
-margin-top: 0 !important;
-margin-bottom: 0 !important;
-}
-
-section {
-padding: 40px 20px !important;
-}
-
-/* Remove giant gaps between sections */
-section + section {
-margin-top: 0 !important;
-}
-</style>
-
-<script>
-// EMERGENCY WHITESPACE REMOVAL
-document.addEventListener('DOMContentLoaded', function() {
-  // Remove excessive padding/margin from all sections after What We Do
-  const sections = document.querySelectorAll('section');
-  sections.forEach(function(section) {
-    section.style.padding = '40px 20px';
-    section.style.margin = '0';
-    section.style.minHeight = 'auto';
-  });
-  
-  // Specifically target the Approach/Working Together section
-  const workingTogether = document.querySelector('section:has(span:contains("Working Together"))');
-  if (workingTogether) {
-    workingTogether.style.paddingTop = '40px';
-    workingTogether.style.marginTop = '0';
-  }
-  
-  // Kill GSAP animations that add spacing
-  if (typeof gsap !== 'undefined') {
-    gsap.globalTimeline.clear();
-  }
-});
-</script>
-
-<style>
-/* AGGRESSIVE WHITESPACE FIX - between What We Do and Working Together */
-#services {
-padding-bottom: 0 !important;
-margin-bottom: 0 !important;
-}
-
-#services + section {
-padding-top: 0 !important;
-margin-top: 0 !important;
-}
-
-section:has(> div > span:contains("Working Together")),
-section:has(h2:contains("How we partner")) {
-padding-top: 0 !important;
-margin-top: 0 !important;
-}
-
-/* Force reduce ALL section spacing */
-section {
-padding-top: 2rem !important;
-padding-bottom: 2rem !important;
-}
-
-section:first-of-type {
-padding-top: 6rem !important;
-}
-
-/* Service cards reduce margin */
-.feature-card {
-margin-bottom: 10px !important;
-}
-
-/* Remove giant grid gaps */
-.grid {
-gap: 10px !important;
-}
-
-/* Section bottom padding */
-section {
-padding-bottom: 40px !important;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Remove excessive padding between sections
-  const servicesSection = document.getElementById('services');
-  if (servicesSection) {
-    servicesSection.style.paddingBottom = '20px';
-  }
-  
-  // Find Working Together section and reduce padding
-  const sections = document.querySelectorAll('section');
-  sections.forEach(function(section) {
-    if (section.textContent.includes('Working Together')) {
-      section.style.paddingTop = '40px';
-      section.style.marginTop = '0';
-    }
-  });
-});
-</script>
