@@ -618,14 +618,8 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 <!-- Project 1: Chloe Avenaim — Large -->
 <a href="https://www.chloe-avenaim.com" target="_blank" rel="noopener" class="project-card group lg:col-span-2 block" data-cursor="hover">
-<div class="relative aspect-[21/9] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-8">
-<div class="absolute inset-0 bg-gradient-to-br from-rose-500/25 to-amber-500/25"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="text-center">
-<div class="text-4xl md:text-6xl font-[var(--font-display)] font-bold tracking-tight text-white/90 mb-2">Chloe Avenaim</div>
-<div class="text-sm md:text-base text-white/70 uppercase tracking-widest">chloe-avenaim.com</div>
-</div>
-</div>
+<div class="relative aspect-[21/9] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-8 border border-[var(--border)]">
+<img src="images/chloe.jpg" alt="Chloe Avenaim — portfolio and booking site" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-[1.02] transition-transform duration-700" />
 <div class="absolute top-6 left-6 flex gap-3">
 <span class="px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Talent Portfolio</span>
 <span class="px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full text-[var(--text-muted)]">Web Design</span>
@@ -651,14 +645,8 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 
 <!-- Project 2: Stéphane Vice -->
 <a href="https://www.stephanevice.com" target="_blank" rel="noopener" class="project-card group block" data-cursor="hover">
-<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6">
-<div class="absolute inset-0 bg-gradient-to-br from-zinc-500/25 to-slate-700/25"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="text-center">
-<div class="text-2xl md:text-4xl font-[var(--font-display)] font-bold tracking-tight text-white/90 mb-2">Stéphane Vice</div>
-<div class="text-xs md:text-sm text-white/70 uppercase tracking-widest">stephanevice.com</div>
-</div>
-</div>
+<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6 border border-[var(--border)]">
+<img src="images/stephanevice.jpg" alt="Can Art by Stéphane Vice — upcycled aluminum sculpture portfolio" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-[1.02] transition-transform duration-700" />
 <div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Fine Art</div>
 </div>
 <div class="space-y-3">
@@ -670,24 +658,24 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 </div>
 </a>
 
-<!-- Project 3: LGI Consulting -->
-<a href="https://www.lgiconsulting.com" target="_blank" rel="noopener" class="project-card group block lg:mt-16" data-cursor="hover">
-<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6">
-<div class="absolute inset-0 bg-gradient-to-br from-indigo-500/25 to-sky-500/25"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="text-center">
-<div class="text-2xl md:text-4xl font-[var(--font-display)] font-bold tracking-tight text-white/90 mb-2">LGI Consulting</div>
-<div class="text-xs md:text-sm text-white/70 uppercase tracking-widest">lgiconsulting.com</div>
+<!-- Slot 3: Your project next — CTA card keeps grid balanced -->
+<a href="#contact" class="project-card group block lg:mt-16" data-cursor="hover">
+<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-tertiary)] mb-6 border-2 border-dashed border-[var(--border-strong)] flex items-center justify-center">
+<div class="absolute inset-0 grid-pattern opacity-20"></div>
+<div class="text-center relative z-10 px-6">
+<div class="w-16 h-16 rounded-full bg-[var(--accent)] text-[var(--bg-primary)] flex items-center justify-center mx-auto mb-4 transform group-hover:rotate-45 transition-transform duration-500">
+<i data-lucide="plus" class="w-7 h-7"></i>
 </div>
+<div class="text-2xl md:text-3xl font-[var(--font-display)] font-bold mb-2">Your project next.</div>
+<div class="text-sm text-[var(--text-muted)] uppercase tracking-widest">Two slots open this quarter</div>
 </div>
-<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Advisory</div>
 </div>
 <div class="space-y-3">
 <div class="flex justify-between items-start gap-4">
-<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">LGI Consulting Group</h3>
-<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">Have something in mind?</h3>
+<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Start ↗</span>
 </div>
-<p class="text-[var(--text-secondary)] leading-relaxed">Marketing site for a management consulting firm — approach, services, and experience presented with the restraint corporate clients expect.</p>
+<p class="text-[var(--text-secondary)] leading-relaxed">We take on a small number of brand, web, and product projects each quarter. Tell us what you're building.</p>
 </div>
 </a>
 </div>
