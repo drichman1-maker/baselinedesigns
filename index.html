@@ -531,11 +531,11 @@ We're a collaborative design studio blending years of product visualization expe
 
 <!-- CTA Group - IMPROVED: Strong contrast, better spacing -->
 <div class="flex flex-col sm:flex-row gap-4 hero-anim">
-<a href="#work" class="magnetic-btn px-8 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all flex items-center justify-center gap-3 text-base mobile-tap" data-magnetic>
-View Selected Work <i data-lucide="arrow-right" class="w-5 h-5"></i>
+<a href="#contact" class="magnetic-btn px-8 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all flex items-center justify-center gap-3 text-base mobile-tap" data-magnetic>
+Start a project <i data-lucide="arrow-right" class="w-5 h-5"></i>
 </a>
-<a href="#contact" class="magnetic-btn px-8 py-5 border-2 border-[var(--border-strong)] rounded-[var(--radius)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all flex items-center justify-center text-base mobile-tap" data-magnetic>
-Start a Project
+<a href="#work" class="magnetic-btn px-8 py-5 border-2 border-[var(--border-strong)] rounded-[var(--radius)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all flex items-center justify-center text-base mobile-tap" data-magnetic>
+See work
 </a>
 </div>
 </div>
@@ -610,24 +610,25 @@ Start a Project
 <h2 class="text-5xl md:text-6xl lg:text-7xl font-[var(--font-display)] font-bold leading-tight">Recent<br>Projects</h2>
 </div>
 <a href="#contact" class="magnetic-btn inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors font-medium mobile-tap py-2" data-magnetic>
-Discuss Your Project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 </a>
 </div>
 
-<!-- Projects Grid - IMPROVED: Asymmetric but balanced, better spacing -->
+<!-- Projects Grid - 3 recent shipped projects -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-<!-- Project 1 - Large -->
-<div class="project-card group cursor-pointer lg:col-span-2" data-cursor="hover">
+<!-- Project 1: Chloe Avenaim — Large -->
+<a href="https://www.chloe-avenaim.com" target="_blank" rel="noopener" class="project-card group lg:col-span-2 block" data-cursor="hover">
 <div class="relative aspect-[21/9] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-8">
-<div class="absolute inset-0 bg-gradient-to-br from-slate-500/20 to-zinc-500/20"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-rose-500/25 to-amber-500/25"></div>
 <div class="absolute inset-0 flex items-center justify-center">
-<div class="w-40 h-40 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-<i data-lucide="hexagon" class="w-20 h-20 text-white/80"></i>
+<div class="text-center">
+<div class="text-4xl md:text-6xl font-[var(--font-display)] font-bold tracking-tight text-white/90 mb-2">Chloe Avenaim</div>
+<div class="text-sm md:text-base text-white/70 uppercase tracking-widest">chloe-avenaim.com</div>
 </div>
 </div>
 <div class="absolute top-6 left-6 flex gap-3">
-<span class="px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Brand Identity</span>
-<span class="px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full text-[var(--text-muted)]">Web Platform</span>
+<span class="px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Talent Portfolio</span>
+<span class="px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full text-[var(--text-muted)]">Web Design</span>
 </div>
 <div class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
 <div class="w-14 h-14 rounded-full bg-[var(--accent)] text-[var(--bg-primary)] flex items-center justify-center">
@@ -637,96 +638,58 @@ Discuss Your Project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 </div>
 <div class="grid md:grid-cols-2 gap-4 items-end">
 <div>
-<h3 class="text-3xl md:text-4xl font-[var(--font-display)] font-bold mb-3 group-hover:text-[var(--accent-hover)] transition-colors">Fintech Brand System</h3>
-<p class="text-[var(--text-secondary)] text-lg leading-relaxed max-w-md">Complete visual identity and digital platform for a financial technology concept — exploring trust, clarity, and modern elegance.</p>
+<h3 class="text-3xl md:text-4xl font-[var(--font-display)] font-bold mb-3 group-hover:text-[var(--accent-hover)] transition-colors">Chloe Avenaim</h3>
+<p class="text-[var(--text-secondary)] text-lg leading-relaxed max-w-md">Booking and portfolio site for a Miami-based model — swimwear, editorial, and commercial campaigns in one editorial-feeling experience.</p>
 </div>
 <div class="flex gap-2 flex-wrap md:justify-end">
-<span class="px-3 py-1 border border-[var(--border)] rounded-full text-sm">Strategy</span>
-<span class="px-3 py-1 border border-[var(--border)] rounded-full text-sm">Identity</span>
+<span class="px-3 py-1 border border-[var(--border)] rounded-full text-sm">Art Direction</span>
 <span class="px-3 py-1 border border-[var(--border)] rounded-full text-sm">Web</span>
+<span class="px-3 py-1 border border-[var(--border)] rounded-full text-sm">Visit site ↗</span>
 </div>
 </div>
-</div>
+</a>
 
-<!-- Project 2 -->
-<div class="project-card group cursor-pointer" data-cursor="hover">
+<!-- Project 2: Stéphane Vice -->
+<a href="https://www.stephanevice.com" target="_blank" rel="noopener" class="project-card group block" data-cursor="hover">
 <div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6">
-<div class="absolute inset-0 bg-gradient-to-br from-stone-500/20 to-neutral-500/20"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-zinc-500/25 to-slate-700/25"></div>
 <div class="absolute inset-0 flex items-center justify-center">
-<div class="w-32 h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 rotate-12 flex items-center justify-center transform group-hover:rotate-0 transition-transform duration-500">
-<i data-lucide="building-2" class="w-16 h-16 text-white/80"></i>
+<div class="text-center">
+<div class="text-2xl md:text-4xl font-[var(--font-display)] font-bold tracking-tight text-white/90 mb-2">Stéphane Vice</div>
+<div class="text-xs md:text-sm text-white/70 uppercase tracking-widest">stephanevice.com</div>
 </div>
 </div>
-<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Architecture Studio</div>
+<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Fine Art</div>
 </div>
 <div class="space-y-3">
 <div class="flex justify-between items-start gap-4">
-<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">Monolith Digital Presence</h3>
-<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Concept</span>
+<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">Can Art by Stéphane Vice</h3>
+<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
 </div>
-<p class="text-[var(--text-secondary)] leading-relaxed">Minimalist website design for an architecture practice — emphasizing space, materiality, and project storytelling.</p>
+<p class="text-[var(--text-secondary)] leading-relaxed">Portfolio for a sculptor working in upcycled aluminum — quiet, reflective compositions that needed a site just as patient as the work.</p>
 </div>
-</div>
+</a>
 
-<!-- Project 3 -->
-<div class="project-card group cursor-pointer lg:mt-16" data-cursor="hover">
+<!-- Project 3: LGI Consulting -->
+<a href="https://www.lgiconsulting.com" target="_blank" rel="noopener" class="project-card group block lg:mt-16" data-cursor="hover">
 <div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6">
-<div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-indigo-500/25 to-sky-500/25"></div>
 <div class="absolute inset-0 flex items-center justify-center">
-<div class="w-32 h-32 organic-blob bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-<i data-lucide="leaf" class="w-16 h-16 text-white/80"></i>
+<div class="text-center">
+<div class="text-2xl md:text-4xl font-[var(--font-display)] font-bold tracking-tight text-white/90 mb-2">LGI Consulting</div>
+<div class="text-xs md:text-sm text-white/70 uppercase tracking-widest">lgiconsulting.com</div>
 </div>
 </div>
-<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Sustainable Fashion</div>
+<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Advisory</div>
 </div>
 <div class="space-y-3">
 <div class="flex justify-between items-start gap-4">
-<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">Verdant E-Commerce</h3>
-<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Concept</span>
+<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">LGI Consulting Group</h3>
+<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
 </div>
-<p class="text-[var(--text-secondary)] leading-relaxed">E-commerce exploration for sustainable fashion — balancing ethical messaging with luxurious shopping experience.</p>
+<p class="text-[var(--text-secondary)] leading-relaxed">Marketing site for a management consulting firm — approach, services, and experience presented with the restraint corporate clients expect.</p>
 </div>
-</div>
-
-<!-- Project 4 -->
-<div class="project-card group cursor-pointer" data-cursor="hover">
-<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6">
-<div class="absolute inset-0 bg-gradient-to-br from-rose-500/20 to-pink-500/20"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-32 h-32 rounded-full border-4 border-white/20 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-<i data-lucide="music" class="w-16 h-16 text-white/80"></i>
-</div>
-</div>
-<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">Music App</div>
-</div>
-<div class="space-y-3">
-<div class="flex justify-between items-start gap-4">
-<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">Resonance Interface</h3>
-<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Concept</span>
-</div>
-<p class="text-[var(--text-secondary)] leading-relaxed">Music streaming interface focused on discovery — exploring how visual design influences listening behavior.</p>
-</div>
-</div>
-
-<!-- Project 5 -->
-<div class="project-card group cursor-pointer lg:mt-16" data-cursor="hover">
-<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-[var(--bg-secondary)] mb-6">
-<div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-violet-500/20"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-32 h-32 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500">
-<i data-lucide="box" class="w-16 h-16 text-white/80"></i>
-</div>
-</div>
-<div class="absolute top-4 left-4 px-4 py-2 bg-[var(--bg-primary)]/90 backdrop-blur text-sm font-medium rounded-full">3D Configurator</div>
-</div>
-<div class="space-y-3">
-<div class="flex justify-between items-start gap-4">
-<h3 class="text-2xl font-[var(--font-display)] font-bold group-hover:text-[var(--accent-hover)] transition-colors">Product Visualization</h3>
-<span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Concept</span>
-</div>
-<p class="text-[var(--text-secondary)] leading-relaxed">Interactive 3D product configurator — bringing automotive visualization techniques to consumer goods.</p>
-</div>
-</div>
+</a>
 </div>
 
 <!-- Mid-page CTA - NEW: Strong conversion point -->
@@ -736,7 +699,7 @@ Discuss Your Project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 <p class="text-[var(--text-secondary)] text-lg">We work with a select number of clients each quarter to ensure dedicated attention and exceptional results.</p>
 </div>
 <a href="#contact" class="magnetic-btn inline-flex px-10 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all items-center gap-3 text-lg mobile-tap" data-magnetic>
-Start a Conversation <i data-lucide="arrow-right" class="w-5 h-5"></i>
+Start a project <i data-lucide="arrow-right" class="w-5 h-5"></i>
 </a>
 </div>
 </div>
@@ -838,61 +801,30 @@ From exotic cars
 
 <!-- Services - REDESIGNED: Card-based layout, better spacing, clearer hierarchy -->
 
-<!-- Approach Section - NEW: Replaces testimonials with process/philosophy -->
+<!-- Local Business Sites — link to sales.baselinedesigns.com -->
 <section class="px-6 lg:px-12 py-16 md:py-24 bg-[var(--bg-secondary)]">
 <div class="container mx-auto max-w-7xl">
-<div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-<div>
-<span class="text-sm uppercase tracking-widest text-[var(--text-muted)] font-medium mb-4 block">Working Together</span>
-<h2 class="text-4xl md:text-5xl lg:text-6xl font-[var(--font-display)] font-bold mb-8 leading-tight">
-How we partner<br>
-<span class="text-[var(--text-muted)]">with clients.</span>
+<div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<div class="lg:col-span-7">
+<span class="text-sm uppercase tracking-widest text-[var(--text-muted)] font-medium mb-4 block">Local Businesses</span>
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-[var(--font-display)] font-bold mb-6 leading-tight">
+Need a site, not a<br>
+<span class="text-[var(--text-muted)]">six-month engagement?</span>
 </h2>
-
-<div class="space-y-8">
-<div class="flex gap-6">
-<div class="w-12 h-12 rounded-full bg-[var(--accent)] text-[var(--bg-primary)] flex items-center justify-center font-bold text-lg shrink-0">1</div>
-<div>
-<h4 class="font-[var(--font-display)] font-bold text-xl mb-2">Discovery & Strategy</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">Deep dive into your business, audience, and goals. We define success metrics and project scope before any design begins.</p>
+<p class="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mb-8">
+For local businesses we offer a separate, fixed-scope service: a custom website for a one-time payment. No retainers, no monthly fees. Same craft, tighter scope.
+</p>
+<a href="https://sales.baselinedesigns.com" target="_blank" rel="noopener" class="magnetic-btn inline-flex px-10 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all items-center gap-3 text-lg mobile-tap" data-magnetic>
+See pricing & examples <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+</a>
 </div>
-</div>
-
-<div class="flex gap-6">
-<div class="w-12 h-12 rounded-full bg-[var(--accent)] text-[var(--bg-primary)] flex items-center justify-center font-bold text-lg shrink-0">2</div>
-<div>
-<h4 class="font-[var(--font-display)] font-bold text-xl mb-2">Design Exploration</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">Concepts and iterations, always tied to strategy. Collaborative feedback loops ensure we're aligned before refinement.</p>
-</div>
-</div>
-
-<div class="flex gap-6">
-<div class="w-12 h-12 rounded-full bg-[var(--accent)] text-[var(--bg-primary)] flex items-center justify-center font-bold text-lg shrink-0">3</div>
-<div>
-<h4 class="font-[var(--font-display)] font-bold text-xl mb-2">Refinement & Build</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">Polished design systems and careful implementation. I handle both design and frontend, ensuring fidelity from concept to launch.</p>
-</div>
-</div>
-
-<div class="flex gap-6">
-<div class="w-12 h-12 rounded-full bg-[var(--accent)] text-[var(--bg-primary)] flex items-center justify-center font-bold text-lg shrink-0">4</div>
-<div>
-<h4 class="font-[var(--font-display)] font-bold text-xl mb-2">Launch & Support</h4>
-<p class="text-[var(--text-secondary)] leading-relaxed">Deployment with care, documentation, and ongoing partnership. Many clients return for evolution and new phases.</p>
-</div>
-</div>
-</div>
-</div>
-
-<div class="relative">
-<div class="min-h-[400px] md:min-h-[500px] rounded-[var(--radius)] bg-[var(--bg-tertiary)] overflow-hidden relative flex items-center justify-center p-6 md:p-12">
+<div class="lg:col-span-5">
+<div class="min-h-[280px] md:min-h-[360px] rounded-[var(--radius)] bg-[var(--bg-tertiary)] overflow-hidden relative flex items-center justify-center p-8 md:p-12">
 <div class="absolute inset-0 grid-pattern opacity-30"></div>
-<div class="text-center relative z-10 max-w-xs md:max-w-2xl">
-<i data-lucide="message-circle" class="w-12 h-12 md:w-24 md:h-24 text-[var(--accent)] mx-auto mb-3 md:mb-6"></i>
-<blockquote class="text-lg md:text-2xl lg:text-3xl font-[var(--font-display)] font-medium leading-tight mb-3 md:mb-6">
-"The best design relationships feel like true partnerships — aligned on goals, honest in feedback, and committed to excellence."
-</blockquote>
-<div class="text-[var(--text-muted)] uppercase tracking-widest text-xs md:text-sm">Our Philosophy</div>
+<div class="text-center relative z-10">
+<div class="text-sm uppercase tracking-widest text-[var(--text-muted)] mb-3">sales.baselinedesigns.com</div>
+<div class="text-3xl md:text-5xl font-[var(--font-display)] font-bold text-[var(--accent)] leading-tight mb-3">One-time<br>payment.</div>
+<div class="text-[var(--text-secondary)]">Custom websites for local businesses.</div>
 </div>
 </div>
 </div>
@@ -955,9 +887,9 @@ We take on a limited number of projects each quarter. If you have a brand, websi
 <form id="contactForm" class="space-y-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
-<label class="block text-sm font-medium uppercase tracking-wider">Name</label>
-<input type="text" required 
-  class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base peer" 
+<label for="cf-name" class="block text-sm font-medium uppercase tracking-wider">Name</label>
+<input id="cf-name" name="name" type="text" required
+  class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base peer"
   placeholder="Your name"
   pattern="^[a-zA-Z\s]{2,}$"
   title="Please enter a valid name (minimum 2 letters)"
@@ -965,8 +897,8 @@ We take on a limited number of projects each quarter. If you have a brand, websi
 <p class="mt-1 text-sm text-[var(--error)] invisible peer-invalid:visible">Please enter a valid name</p>
 </div>
 <div class="space-y-2">
-<label class="block text-sm font-medium uppercase tracking-wider">Email</label>
-<input type="email" required
+<label for="cf-email" class="block text-sm font-medium uppercase tracking-wider">Email</label>
+<input id="cf-email" name="email" type="email" required
   class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base peer"
   placeholder="your@email.com"
   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -977,8 +909,8 @@ We take on a limited number of projects each quarter. If you have a brand, websi
 </div>
 
 <div class="space-y-2">
-<label class="block text-sm font-medium uppercase tracking-wider">Project Type</label>
-<select class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base cursor-pointer">
+<label for="cf-type" class="block text-sm font-medium uppercase tracking-wider">Project Type</label>
+<select id="cf-type" name="type" class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base cursor-pointer">
 <option value="">Select a service...</option>
 <option>Brand Identity</option>
 <option>Website Design</option>
@@ -989,8 +921,8 @@ We take on a limited number of projects each quarter. If you have a brand, websi
 </div>
 
 <div class="space-y-2">
-<label class="block text-sm font-medium uppercase tracking-wider">Budget Range</label>
-<select class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base cursor-pointer">
+<label for="cf-budget" class="block text-sm font-medium uppercase tracking-wider">Budget Range</label>
+<select id="cf-budget" name="budget" class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors text-base cursor-pointer">
 <option value="">Select budget range...</option>
 <option>$5k – $15k</option>
 <option>$15k – $30k</option>
@@ -1000,12 +932,12 @@ We take on a limited number of projects each quarter. If you have a brand, websi
 </div>
 
 <div class="space-y-2">
-<label class="block text-sm font-medium uppercase tracking-wider">Tell us about your project</label>
-<textarea rows="5" required class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors resize-none text-base" placeholder="What are you building? What challenges are you facing? What's your timeline?"></textarea>
+<label for="cf-message" class="block text-sm font-medium uppercase tracking-wider">Tell us about your project</label>
+<textarea id="cf-message" name="message" rows="5" required class="w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors resize-none text-base" placeholder="What are you building? What challenges are you facing? What's your timeline?"></textarea>
 </div>
 
 <button type="submit" class="w-full py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-bold text-lg rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all flex items-center justify-center gap-3 magnetic-btn mobile-tap" data-magnetic>
-Send Message <i data-lucide="send" class="w-5 h-5"></i>
+Start a project <i data-lucide="send" class="w-5 h-5"></i>
 </button>
 
 <p class="text-center text-sm text-[var(--text-muted)]">
@@ -1020,9 +952,9 @@ Prefer to email directly? <a href="mailto:hello@baselinedesigns.com" class="unde
 <!-- Footer - REDESIGNED: Cleaner layout, better spacing -->
 <footer class="px-6 lg:px-12 py-16 border-t-2 border-[var(--border)] bg-[var(--bg-secondary)]">
 <div class="container mx-auto max-w-7xl">
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="grid md:grid-cols-3 gap-12 mb-16">
 <!-- Brand -->
-<div class="lg:col-span-2">
+<div class="md:col-span-2">
 <div class="text-3xl font-bold tracking-tighter font-[var(--font-display)] mb-4">
 BASELINE<span class="text-[var(--text-muted)]">.</span>
 </div>
@@ -1041,22 +973,16 @@ Collaborative design studio crafting brand identities and digital experiences. P
 <ul class="space-y-3 text-[var(--text-secondary)]">
 <li class="flex items-start gap-3">
 <i data-lucide="mail" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
-<span>hello@baselinedesigns.com</span>
+<a href="mailto:hello@baselinedesigns.com" class="hover:text-[var(--accent)] transition-colors">hello@baselinedesigns.com</a>
 </li>
 <li class="flex items-start gap-3">
 <i data-lucide="globe" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
 <span>Working remotely with clients worldwide</span>
 </li>
-</ul>
-</div>
-
-<!-- Links -->
-<div>
-<h4 class="font-[var(--font-display)] font-bold text-lg mb-4">Navigate</h4>
-<ul class="space-y-3 text-[var(--text-secondary)]">
-<li><a href="#work" class="hover:text-[var(--accent)] transition-colors">Selected Work</a></li>
-<li><a href="#studio" class="hover:text-[var(--accent)] transition-colors">Studio</a></li>
-<li><a href="#contact" class="hover:text-[var(--accent)] transition-colors">Contact</a></li>
+<li class="flex items-start gap-3">
+<i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
+<a href="https://sales.baselinedesigns.com" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition-colors">Local business sites ↗</a>
+</li>
 </ul>
 </div>
 </div>
@@ -1270,12 +1196,32 @@ behavior: 'smooth'
 });
 });
 
-// Form submission
+// Form submission — build a mailto: link from the form fields and open the user's mail client
 document.getElementById('contactForm').addEventListener('submit', (e) => {
 e.preventDefault();
-const btn = e.target.querySelector('button[type="submit"]');
+const form = e.target;
+const name = form.querySelector('#cf-name').value.trim();
+const email = form.querySelector('#cf-email').value.trim();
+const type = form.querySelector('#cf-type').value.trim();
+const budget = form.querySelector('#cf-budget').value.trim();
+const message = form.querySelector('#cf-message').value.trim();
+
+const subject = `New project inquiry — ${name}${type ? ' (' + type + ')' : ''}`;
+const bodyLines = [
+  `Name: ${name}`,
+  `Email: ${email}`,
+  type ? `Project type: ${type}` : null,
+  budget ? `Budget: ${budget}` : null,
+  '',
+  message,
+].filter((line) => line !== null);
+
+const href = `mailto:hello@baselinedesigns.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+window.location.href = href;
+
+const btn = form.querySelector('button[type="submit"]');
 const originalText = btn.innerHTML;
-btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> Message Sent Successfully';
+btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> Opening your mail app...';
 btn.disabled = true;
 lucide.createIcons();
 
@@ -1283,7 +1229,6 @@ setTimeout(() => {
 btn.innerHTML = originalText;
 btn.disabled = false;
 lucide.createIcons();
-e.target.reset();
 }, 3000);
 });
 
