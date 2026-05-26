@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps — Baseline Designs</title>
+<meta name="description" content="Side projects from Baseline Designs. Independent web apps for price tracking, deal hunting, and consumer intelligence — Apple products, GPUs, wellness devices, baby gear, robotics, retro gaming.">
+<link rel="canonical" href="https://www.baselinedesigns.com/apps/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baseline Designs">
+<meta property="og:title" content="Apps — Baseline Designs">
+<meta property="og:description" content="Side projects from Baseline Designs. Independent web apps for price tracking, deal hunting, and consumer intelligence.">
+<meta property="og:url" content="https://www.baselinedesigns.com/apps/">
+<meta property="og:image" content="https://www.baselinedesigns.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apps — Baseline Designs">
+<meta name="twitter:description" content="Side projects from Baseline Designs. Independent web apps for price tracking, deal hunting, and consumer intelligence.">
+<meta name="twitter:image" content="https://www.baselinedesigns.com/images/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #fafafa;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #ffffff;
+  --text-primary: #171717;
+  --text-secondary: #525252;
+  --text-muted: #a3a3a3;
+  --accent: #171717;
+  --accent-hover: #404040;
+  --border: #e5e5e5;
+  --border-strong: #d4d4d4;
+  --radius: 16px;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+html, body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); }
+.app-card { transition: transform 0.3s ease, border-color 0.3s ease; }
+.app-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.app-tile { transition: transform 0.5s ease; }
+.app-card:hover .app-tile { transform: scale(1.03); }
+.tile-theresmac { background: linear-gradient(135deg, #064e3b 0%, #10b981 100%); }
+.tile-gpudrip   { background: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%); }
+.tile-healthindex { background: linear-gradient(135deg, #78350f 0%, #f59e0b 100%); }
+.tile-babygear  { background: linear-gradient(135deg, #581c87 0%, #a855f7 100%); }
+.tile-robotsniper { background: linear-gradient(135deg, #7f1d1d 0%, #ef4444 100%); }
+.tile-rumbledeals { background: linear-gradient(135deg, #7c2d12 0%, #f97316 100%); }
+.tile-lowkey    { background: linear-gradient(135deg, #831843 0%, #ec4899 100%); }
+</style>
+</head>
+<body>
+
+<!-- Navigation matches baselinedesigns.com main site -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-[var(--border)] px-6 lg:px-12 py-4 flex justify-between items-center">
+  <a href="/" class="text-xl lg:text-2xl font-bold tracking-tighter font-[var(--font-display)]">
+    BASELINE<span class="text-[var(--text-muted)]">.</span>
+  </a>
+  <div class="hidden md:flex items-center gap-10">
+    <a href="/#work" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors py-2">Work</a>
+    <a href="/apps/" class="text-sm font-medium text-[var(--accent)] py-2">Apps</a>
+    <a href="/#studio" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors py-2">Studio</a>
+    <a href="/#contact" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors py-2">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-40 pb-16 px-6 lg:px-12">
+  <div class="container mx-auto max-w-7xl">
+    <span class="text-sm uppercase tracking-widest text-[var(--text-muted)] font-medium mb-4 block">Independent apps</span>
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-[var(--font-display)] font-bold leading-[0.95] tracking-tight mb-8">
+      Apps<span class="text-[var(--text-muted)]">.</span><br>
+      <span class="text-[var(--text-secondary)]">Side projects from the studio.</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
+      Independent web apps for price tracking and consumer intelligence. Each one built to scratch a specific itch — Apple deals, GPU drops, wellness devices, baby gear, robotics, retro gaming, focus tools.
+    </p>
+  </div>
+</section>
+
+<!-- Apps grid -->
+<section class="px-6 lg:px-12 pb-24">
+  <div class="container mx-auto max-w-7xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+      <!-- TheresMac -->
+      <a href="https://www.theresmac.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden">
+          <div class="app-tile w-full h-full tile-theresmac flex items-center justify-center text-6xl">🍎</div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">TheresMac</h3>
+            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+          </div>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Mac, iPad, iPhone deal tracking across 8+ retailers. Price drop alerts, refurb finds, and honest buyer guides.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">React</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Alerts</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- GPU Drip -->
+      <a href="https://gpudrip.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden">
+          <div class="app-tile w-full h-full tile-gpudrip flex items-center justify-center text-6xl">🎮</div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">GPU Drip</h3>
+            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+          </div>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">GPU and hardware price intelligence. Restock alerts, price history, and buyer guides for PC builders.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Tracking</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- HealthIndex -->
+      <a href="https://healthindex.app" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden">
+          <div class="app-tile w-full h-full tile-healthindex flex items-center justify-center text-6xl">🩺</div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">HealthIndex</h3>
+            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+          </div>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Wellness device price tracker. Saunas, hyperbaric chambers, cryotherapy, red light, PEMF — verified across retailers.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Vite</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Wellness</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- BabyGear -->
+      <a href="https://babygearhere.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden">
+          <div class="app-tile w-full h-full tile-babygear flex items-center justify-center text-6xl">🍼</div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">BabyGear</h3>
+            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+          </div>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Smart shopping for new parents. Strollers, car seats, monitors, and registry tools across top retailers.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Registry</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- RobotSniper -->
+      <a href="https://robotsniper.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden">
+          <div class="app-tile w-full h-full tile-robotsniper flex items-center justify-center text-6xl">🤖</div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">RobotSniper</h3>
+            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+          </div>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Consumer-robotics intelligence layer. Compare prices, track restocks, and analyze autonomous home robots.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Robotics</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Rumble Deals -->
+      <a href="https://rumbledeals.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden">
+          <div class="app-tile w-full h-full tile-rumbledeals flex items-center justify-center text-6xl">🕹️</div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">Rumble Deals</h3>
+            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
+          </div>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Retro gaming deals and auction intelligence. Classic consoles, games, collectibles, plus Heritage upcoming auctions.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Auctions</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- LowKey Mode -->
+      <a href="https://codemodeapps.com#lowkey" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden lg:col-span-1">
+        <div class="aspect-[4/3] overflow-hidden">
+          <div class="app-tile w-full h-full tile-lowkey flex items-center justify-center text-6xl">🧘</div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start gap-4 mb-3">
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">LowKey Mode</h3>
+            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">iOS</span>
+          </div>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Ambient sound and meditation for iOS. Decibel scoring, sleep modules, and haptics. 100% private, no accounts.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Swift</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">iOS</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Focus</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Closing pitch -->
+    <div class="mt-16 pt-16 border-t border-[var(--border)]">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-[var(--font-display)] font-bold mb-4">Want one built for your business?</h2>
+        <p class="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
+          Most of these started as one-weekend experiments. If you have a niche where a clean comparison site, price tracker, or vertical search would be useful, the studio takes on a small number of custom builds each quarter.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--bg-primary)] rounded-[var(--radius)] font-medium hover:bg-[var(--accent-hover)] transition-colors">
+          Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-[var(--border)] px-6 lg:px-12 py-12">
+  <div class="container mx-auto max-w-7xl flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center justify-between">
+    <div>
+      <a href="/" class="text-xl font-bold tracking-tighter font-[var(--font-display)]">BASELINE<span class="text-[var(--text-muted)]">.</span></a>
+      <p class="text-sm text-[var(--text-muted)] mt-2">Independent design studio. © 2026.</p>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+      <a href="/" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Home</a>
+      <a href="/#work" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Work</a>
+      <a href="/apps/" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Apps</a>
+      <a href="/#contact" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
