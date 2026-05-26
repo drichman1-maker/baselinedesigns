@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Project — Baseline Designs</title>
+<meta name="description" content="Tell me about your project. Custom brand identity, websites, and visual systems. Engagements from $2,500. Response within 24 hours.">
+<link rel="canonical" href="https://www.baselinedesigns.com/start.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baseline Designs">
+<meta property="og:title" content="Start a Project — Baseline Designs">
+<meta property="og:description" content="Tell me about your project. Custom brand identity, websites, and visual systems. Engagements from $2,500.">
+<meta property="og:url" content="https://www.baselinedesigns.com/start.html">
+<meta property="og:image" content="https://www.baselinedesigns.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Start a Project — Baseline Designs">
+<meta name="twitter:description" content="Tell me about your project. Custom brand identity, websites, and visual systems. Engagements from $2,500.">
+<meta name="twitter:image" content="https://www.baselinedesigns.com/images/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+/* Minimal (default) theme — matches index.html */
+--bg-primary: #fafafa;
+--bg-secondary: #f5f5f5;
+--bg-tertiary: #ffffff;
+--text-primary: #171717;
+--text-secondary: #525252;
+--text-muted: #a3a3a3;
+--accent: #171717;
+--accent-hover: #404040;
+--border: #e5e5e5;
+--border-strong: #d4d4d4;
+--success: #22c55e;
+--error: #ef4444;
+--warning: #f59e0b;
+--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+--shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+--radius: 0.5rem;
+--font-display: 'Space Grotesk', sans-serif;
+--font-body: 'Inter', sans-serif;
+}
+
+[data-theme="cyberpunk"] {
+--bg-primary: #0a0a0f;
+--bg-secondary: #12121a;
+--bg-tertiary: #1a1a2e;
+--text-primary: #00f0ff;
+--text-secondary: #ff00a0;
+--text-muted: #7b68ee;
+--accent: #00f0ff;
+--accent-hover: #ff00a0;
+--border: #1a1a2e;
+--border-strong: #00f0ff;
+--radius: 0;
+}
+
+[data-theme="brutalist"] {
+--bg-primary: #ffffff;
+--bg-secondary: #ff0000;
+--bg-tertiary: #0000ff;
+--text-primary: #000000;
+--text-secondary: #ffffff;
+--text-muted: #666666;
+--accent: #000000;
+--accent-hover: #ff0000;
+--border: #000000;
+--border-strong: #000000;
+--radius: 0;
+}
+
+[data-theme="organic"] {
+--bg-primary: #f7f3e9;
+--bg-secondary: #e8e0d0;
+--bg-tertiary: #d4c5b0;
+--text-primary: #2c241b;
+--text-secondary: #5a4a3a;
+--text-muted: #8b7355;
+--accent: #8b4513;
+--accent-hover: #a0522d;
+--border: #d4c5b0;
+--border-strong: #8b7355;
+--radius: 2rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+font-family: var(--font-body);
+background-color: var(--bg-primary);
+color: var(--text-primary);
+line-height: 1.6;
+transition: background-color 0.5s ease, color 0.5s ease;
+}
+h1, h2, h3, h4 {
+font-family: var(--font-display);
+font-weight: 500;
+letter-spacing: -0.02em;
+line-height: 1.1;
+}
+[data-theme="brutalist"] * { border-width: 2px !important; }
+
+.grid-pattern {
+background-image:
+linear-gradient(var(--border) 1px, transparent 1px),
+linear-gradient(90deg, var(--border) 1px, transparent 1px);
+background-size: 40px 40px;
+}
+
+.theme-transition {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: var(--accent);
+z-index: 9998;
+pointer-events: none;
+transform: scaleY(0);
+transform-origin: top;
+transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.theme-transition.active { transform: scaleY(1); }
+
+.magnetic-btn { transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+/* Form field focus styles */
+.form-field:focus { outline: none; border-color: var(--accent); }
+.form-field:invalid:not(:placeholder-shown) { border-color: var(--error); }
+
+@media (max-width: 768px) {
+.mobile-tap { min-height: 44px; min-width: 44px; }
+}
+</style>
+</head>
+<body data-theme="minimal">
+
+<!-- Theme Transition Overlay -->
+<div class="theme-transition" id="themeTransition"></div>
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-[var(--border)] px-6 lg:px-12 py-4 flex justify-between items-center" id="navbar">
+<a href="/" class="text-xl lg:text-2xl font-bold tracking-tighter font-[var(--font-display)] magnetic-btn mobile-tap flex items-center" data-magnetic>
+BASELINE<span class="text-[var(--text-muted)]">.</span>
+</a>
+
+<div class="hidden md:flex items-center gap-10">
+<a href="/#work" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Work</a>
+<a href="/apps/" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Apps</a>
+<a href="/#studio" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Studio</a>
+<a href="/start.html" class="text-sm font-medium text-[var(--accent)] border-b-2 border-[var(--accent)] py-2">Contact</a>
+</div>
+
+<div class="flex items-center gap-3">
+<button id="themeToggle" class="w-12 h-12 rounded-full border border-[var(--border-strong)] flex items-center justify-center hover:bg-[var(--bg-secondary)] transition-all magnetic-btn mobile-tap" data-magnetic aria-label="Change theme">
+<i data-lucide="palette" class="w-5 h-5"></i>
+</button>
+<a href="/" class="md:hidden w-12 h-12 flex items-center justify-center mobile-tap" aria-label="Back to home">
+<i data-lucide="arrow-left" class="w-5 h-5"></i>
+</a>
+</div>
+</nav>
+
+<!-- Theme Selector Modal -->
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="themeModal" role="dialog" aria-modal="true">
+<div class="absolute top-24 right-6 left-6 md:left-auto md:right-12 bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] p-6 md:p-8 w-full md:w-80 shadow-2xl" id="themePanel">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-[var(--font-display)] text-xl font-semibold">Select Theme</h3>
+<button id="closeThemeModal" class="hover:text-[var(--accent-hover)] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[var(--bg-secondary)] transition-all" aria-label="Close theme selector">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+<div class="space-y-4">
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="minimal">
+<div class="w-10 h-10 rounded-full bg-[#fafafa] border-2 border-[#171717] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Minimal</div><div class="text-sm text-[var(--text-muted)]">Clean & Swiss</div></div>
+</button>
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="cyberpunk">
+<div class="w-10 h-10 rounded-none bg-[#0a0a0f] border-2 border-[#00f0ff] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Cyberpunk</div><div class="text-sm text-[var(--text-muted)]">Neon & Noir</div></div>
+</button>
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="brutalist">
+<div class="w-10 h-10 rounded-none bg-[#ff0000] border-2 border-[#000000] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Brutalist</div><div class="text-sm text-[var(--text-muted)]">Raw & Bold</div></div>
+</button>
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="organic">
+<div class="w-10 h-10 rounded-full bg-[#f7f3e9] border-2 border-[#8b4513] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Organic</div><div class="text-sm text-[var(--text-muted)]">Warm & Natural</div></div>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Header -->
+<section class="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 lg:px-12 overflow-hidden">
+<div class="absolute inset-0 grid-pattern opacity-30 pointer-events-none"></div>
+<div class="container mx-auto max-w-4xl relative z-10 text-center">
+<span class="inline-block px-4 py-2 rounded-full border border-[var(--border-strong)] text-sm font-medium text-[var(--text-secondary)] mb-8">
+Custom Project Inquiry
+</span>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-[var(--font-display)] font-bold leading-[0.95] tracking-tight mb-8">
+Let's create<br>
+<span class="text-[var(--text-muted)]">something bold.</span>
+</h1>
+<p class="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
+I take on a small number of custom engagements each quarter, starting at $2,500. Tell me what you're working on — I usually reply within 24 hours.
+</p>
+</div>
+</section>
+
+<!-- Form -->
+<section class="px-6 lg:px-12 pb-16">
+<div class="container mx-auto max-w-3xl">
+<div class="bg-[var(--bg-secondary)] rounded-[var(--radius)] p-6 md:p-12 border border-[var(--border)]">
+<form id="contactForm" class="space-y-8" novalidate>
+
+<!-- Name + Email row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label for="cf-name" class="block text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">01 — Name *</label>
+<input id="cf-name" name="name" type="text" required minlength="2"
+  class="form-field w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 transition-colors text-base"
+  placeholder="Your name">
+</div>
+<div class="space-y-2">
+<label for="cf-email" class="block text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">02 — Email *</label>
+<input id="cf-email" name="email" type="email" required
+  class="form-field w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 transition-colors text-base"
+  placeholder="your@email.com"
+  pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+</div>
+</div>
+
+<!-- Company / Project name (optional) -->
+<div class="space-y-2">
+<label for="cf-company" class="block text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">03 — Company or project name <span class="normal-case font-normal text-[var(--text-muted)]/70">(optional)</span></label>
+<input id="cf-company" name="company" type="text"
+  class="form-field w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 transition-colors text-base"
+  placeholder="Acme Inc. or working title">
+</div>
+
+<!-- Project Type -->
+<div class="space-y-2">
+<label for="cf-type" class="block text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">04 — Project type *</label>
+<select id="cf-type" name="type" required class="form-field w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 transition-colors text-base cursor-pointer">
+<option value="">Select a service...</option>
+<option>Brand Identity</option>
+<option>Website Design</option>
+<option>App / Product UI</option>
+<option>Art Direction</option>
+<option>Other / Not sure</option>
+</select>
+</div>
+
+<!-- Budget Range -->
+<div class="space-y-2">
+<label for="cf-budget" class="block text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">05 — Budget range *</label>
+<select id="cf-budget" name="budget" required class="form-field w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 transition-colors text-base cursor-pointer">
+<option value="">Select budget range...</option>
+<option>$2,500 – $5,000</option>
+<option>$5,000 – $10,000</option>
+<option>$10,000 – $25,000</option>
+<option>$25,000+</option>
+<option>Not sure yet — let's talk</option>
+</select>
+<p class="mt-2 text-xs text-[var(--text-muted)]">Looking for a local business site under $2.5k? See <a href="https://sales.baselinedesigns.com" target="_blank" rel="noopener" class="underline hover:text-[var(--accent)]">sales.baselinedesigns.com</a>.</p>
+</div>
+
+<!-- Timeline (optional) -->
+<div class="space-y-2">
+<label for="cf-timeline" class="block text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">06 — Timeline <span class="normal-case font-normal text-[var(--text-muted)]/70">(optional)</span></label>
+<select id="cf-timeline" name="timeline" class="form-field w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 transition-colors text-base cursor-pointer">
+<option value="">Select timeline...</option>
+<option>ASAP — within a month</option>
+<option>1–3 months</option>
+<option>3–6 months</option>
+<option>No rush / exploring</option>
+</select>
+</div>
+
+<!-- Message -->
+<div class="space-y-2">
+<label for="cf-message" class="block text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">07 — Tell me about your project *</label>
+<textarea id="cf-message" name="message" rows="6" required minlength="10"
+  class="form-field w-full bg-[var(--bg-primary)] border-2 border-[var(--border)] rounded-[var(--radius)] px-4 py-4 transition-colors resize-y text-base"
+  placeholder="What are you building? Who's it for? Any references, constraints, or things I should know? The more specific, the better."></textarea>
+</div>
+
+<!-- Honeypot -->
+<div class="hidden" aria-hidden="true">
+<label>Don't fill this out: <input name="hp_check" type="text" tabindex="-1" autocomplete="off"></label>
+</div>
+
+<!-- Submit -->
+<div class="pt-2">
+<button type="submit" id="submitBtn" class="w-full py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-bold text-lg rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all flex items-center justify-center gap-3 magnetic-btn mobile-tap disabled:opacity-50 disabled:cursor-not-allowed" data-magnetic>
+<span id="submitText">Send inquiry</span>
+<i data-lucide="send" class="w-5 h-5"></i>
+</button>
+<p class="text-center text-sm text-[var(--text-muted)] mt-4">
+Submitting opens your email client with the message pre-filled.<br>
+Prefer plain email? <a href="mailto:hello@baselinedesigns.com" class="underline hover:text-[var(--accent)]">hello@baselinedesigns.com</a>
+</p>
+</div>
+</form>
+
+<!-- Success state -->
+<div id="successState" class="hidden text-center py-12">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--bg-primary)] border-2 border-[var(--accent)] mb-6">
+<i data-lucide="check" class="w-8 h-8 text-[var(--accent)]"></i>
+</div>
+<h2 class="text-3xl font-[var(--font-display)] font-bold mb-3">Inquiry ready to send.</h2>
+<p class="text-[var(--text-secondary)] mb-6 max-w-md mx-auto">Your email client should be opening with the message pre-filled. Hit send to deliver it.</p>
+<p class="text-sm text-[var(--text-muted)] mb-8">
+Didn't open? <a id="mailtoFallback" href="#" class="underline hover:text-[var(--accent)]">Click here to retry</a>
+or email <a href="mailto:hello@baselinedesigns.com" class="underline hover:text-[var(--accent)]">hello@baselinedesigns.com</a> directly.
+</p>
+<a href="/" class="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--accent)] font-medium transition-colors">
+<i data-lucide="arrow-left" class="w-4 h-4"></i> Back to home
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- What happens next -->
+<section class="px-6 lg:px-12 py-16 md:py-24 bg-[var(--bg-secondary)] border-t border-[var(--border)]">
+<div class="container mx-auto max-w-5xl">
+<div class="text-center mb-12">
+<span class="text-sm uppercase tracking-widest text-[var(--text-muted)] font-medium mb-4 block">What happens next</span>
+<h2 class="text-3xl md:text-5xl font-[var(--font-display)] font-bold leading-tight">A simple, transparent process.</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-6 md:gap-8">
+<div class="bg-[var(--bg-primary)] rounded-[var(--radius)] p-8 border border-[var(--border)]">
+<div class="w-12 h-12 rounded-full bg-[var(--bg-secondary)] flex items-center justify-center mb-6 border border-[var(--border)]">
+<i data-lucide="mail-check" class="w-5 h-5 text-[var(--accent)]"></i>
+</div>
+<div class="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] mb-2">Step 01</div>
+<h3 class="font-[var(--font-display)] font-bold text-xl mb-3">Reply within 24 hours</h3>
+<p class="text-[var(--text-secondary)] text-sm leading-relaxed">A real response from me — usually the same day. If it's not a fit, I'll say so and point you somewhere that is.</p>
+</div>
+<div class="bg-[var(--bg-primary)] rounded-[var(--radius)] p-8 border border-[var(--border)]">
+<div class="w-12 h-12 rounded-full bg-[var(--bg-secondary)] flex items-center justify-center mb-6 border border-[var(--border)]">
+<i data-lucide="video" class="w-5 h-5 text-[var(--accent)]"></i>
+</div>
+<div class="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] mb-2">Step 02</div>
+<h3 class="font-[var(--font-display)] font-bold text-xl mb-3">30-minute scoping call</h3>
+<p class="text-[var(--text-secondary)] text-sm leading-relaxed">We get on a call to talk through the work — goals, constraints, references, timeline. No pitch, just understanding what you need.</p>
+</div>
+<div class="bg-[var(--bg-primary)] rounded-[var(--radius)] p-8 border border-[var(--border)]">
+<div class="w-12 h-12 rounded-full bg-[var(--bg-secondary)] flex items-center justify-center mb-6 border border-[var(--border)]">
+<i data-lucide="file-text" class="w-5 h-5 text-[var(--accent)]"></i>
+</div>
+<div class="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] mb-2">Step 03</div>
+<h3 class="font-[var(--font-display)] font-bold text-xl mb-3">Proposal & timeline</h3>
+<p class="text-[var(--text-secondary)] text-sm leading-relaxed">A written proposal with fixed scope, fixed price, and a clear timeline. Sign it and we start. Simple.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="px-6 lg:px-12 py-16 border-t-2 border-[var(--border)] bg-[var(--bg-secondary)]">
+<div class="container mx-auto max-w-7xl">
+<div class="grid md:grid-cols-3 gap-12 mb-16">
+<div class="md:col-span-2">
+<div class="text-3xl font-bold tracking-tighter font-[var(--font-display)] mb-4">
+BASELINE<span class="text-[var(--text-muted)]">.</span>
+</div>
+<p class="text-[var(--text-secondary)] max-w-md leading-relaxed mb-6">
+Independent design studio crafting brand identities and digital experiences. Personal attention, cross-disciplinary craft, and a focus on lasting quality.
+</p>
+</div>
+<div>
+<h4 class="font-[var(--font-display)] font-bold text-lg mb-4">Contact</h4>
+<ul class="space-y-3 text-[var(--text-secondary)]">
+<li class="flex items-start gap-3">
+<i data-lucide="mail" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
+<a href="mailto:hello@baselinedesigns.com" class="hover:text-[var(--accent)] transition-colors">hello@baselinedesigns.com</a>
+</li>
+<li class="flex items-start gap-3">
+<i data-lucide="globe" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
+<span>Working remotely with clients worldwide</span>
+</li>
+<li class="flex items-start gap-3">
+<i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
+<a href="https://sales.baselinedesigns.com" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition-colors">Local business sites ↗</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-sm text-[var(--text-muted)]">© 2026 Baseline Designs. Independent designer.</div>
+<div class="text-sm text-[var(--text-muted)]">Crafted with precision. Designed to endure.</div>
+</div>
+</div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+// Magnetic buttons (desktop only)
+if (window.matchMedia('(pointer: fine)').matches) {
+document.querySelectorAll('[data-magnetic]').forEach(btn => {
+btn.addEventListener('mousemove', (e) => {
+const rect = btn.getBoundingClientRect();
+const x = e.clientX - rect.left - rect.width / 2;
+const y = e.clientY - rect.top - rect.height / 2;
+btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+});
+btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
+});
+}
+
+// Theme switching
+const themeToggle = document.getElementById('themeToggle');
+const themeModal = document.getElementById('themeModal');
+const themePanel = document.getElementById('themePanel');
+const closeThemeModal = document.getElementById('closeThemeModal');
+const themeOptions = document.querySelectorAll('.theme-option');
+const themeTransition = document.getElementById('themeTransition');
+
+themeToggle.addEventListener('click', () => {
+themeModal.classList.remove('opacity-0', 'pointer-events-none');
+});
+closeThemeModal.addEventListener('click', () => {
+themeModal.classList.add('opacity-0', 'pointer-events-none');
+});
+themeModal.addEventListener('click', (e) => {
+if (e.target === themeModal) themeModal.classList.add('opacity-0', 'pointer-events-none');
+});
+themeOptions.forEach(option => {
+option.addEventListener('click', () => {
+const newTheme = option.dataset.theme;
+const currentTheme = document.body.dataset.theme;
+if (newTheme !== currentTheme) {
+themeTransition.classList.add('active');
+setTimeout(() => {
+document.body.dataset.theme = newTheme;
+themeTransition.classList.remove('active');
+}, 600);
+}
+themeModal.classList.add('opacity-0', 'pointer-events-none');
+});
+});
+
+// Form submission
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitText = document.getElementById('submitText');
+const successState = document.getElementById('successState');
+const mailtoFallback = document.getElementById('mailtoFallback');
+
+function buildMailto(data) {
+const subject = `New project inquiry — ${data.name}${data.type ? ' (' + data.type + ')' : ''}`;
+const lines = [
+`Name: ${data.name}`,
+`Email: ${data.email}`,
+data.company ? `Company / Project: ${data.company}` : null,
+`Project type: ${data.type}`,
+`Budget: ${data.budget}`,
+data.timeline ? `Timeline: ${data.timeline}` : null,
+'',
+'— Project details —',
+data.message,
+'',
+'— Sent from baselinedesigns.com/start —'
+].filter(l => l !== null);
+return `mailto:hello@baselinedesigns.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+}
+
+form.addEventListener('submit', (e) => {
+e.preventDefault();
+
+// Honeypot
+if (form.elements['hp_check'] && form.elements['hp_check'].value) return;
+
+if (!form.checkValidity()) { form.reportValidity(); return; }
+
+const data = Object.fromEntries(new FormData(form).entries());
+
+submitBtn.disabled = true;
+submitText.textContent = 'Opening your mail app...';
+
+const href = buildMailto(data);
+mailtoFallback.setAttribute('href', href);
+window.location.href = href;
+
+setTimeout(() => {
+form.classList.add('hidden');
+successState.classList.remove('hidden');
+lucide.createIcons();
+}, 600);
+});
+</script>
+</body>
+</html>
