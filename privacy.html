@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Baseline Designs</title>
+<meta name="description" content="How Baseline Designs collects, uses, and protects information when you visit baselinedesigns.com or get in touch.">
+<link rel="canonical" href="https://www.baselinedesigns.com/privacy.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baseline Designs">
+<meta property="og:title" content="Privacy Policy — Baseline Designs">
+<meta property="og:description" content="How Baseline Designs collects, uses, and protects information.">
+<meta property="og:url" content="https://www.baselinedesigns.com/privacy.html">
+<meta property="og:image" content="https://www.baselinedesigns.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+/* Minimal (default) theme — matches index.html */
+--bg-primary: #fafafa;
+--bg-secondary: #f5f5f5;
+--bg-tertiary: #ffffff;
+--text-primary: #171717;
+--text-secondary: #525252;
+--text-muted: #a3a3a3;
+--accent: #171717;
+--accent-hover: #404040;
+--border: #e5e5e5;
+--border-strong: #d4d4d4;
+--success: #22c55e;
+--error: #ef4444;
+--warning: #f59e0b;
+--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+--shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+--radius: 0.5rem;
+--font-display: 'Space Grotesk', sans-serif;
+--font-body: 'Inter', sans-serif;
+}
+
+[data-theme="cyberpunk"] {
+--bg-primary: #0a0a0f;
+--bg-secondary: #12121a;
+--bg-tertiary: #1a1a2e;
+--text-primary: #00f0ff;
+--text-secondary: #ff00a0;
+--text-muted: #7b68ee;
+--accent: #00f0ff;
+--accent-hover: #ff00a0;
+--border: #1a1a2e;
+--border-strong: #00f0ff;
+--radius: 0;
+}
+
+[data-theme="brutalist"] {
+--bg-primary: #ffffff;
+--bg-secondary: #ff0000;
+--bg-tertiary: #0000ff;
+--text-primary: #000000;
+--text-secondary: #ffffff;
+--text-muted: #666666;
+--accent: #000000;
+--accent-hover: #ff0000;
+--border: #000000;
+--border-strong: #000000;
+--radius: 0;
+}
+
+[data-theme="organic"] {
+--bg-primary: #f7f3e9;
+--bg-secondary: #e8e0d0;
+--bg-tertiary: #d4c5b0;
+--text-primary: #2c241b;
+--text-secondary: #5a4a3a;
+--text-muted: #8b7355;
+--accent: #8b4513;
+--accent-hover: #a0522d;
+--border: #d4c5b0;
+--border-strong: #8b7355;
+--radius: 2rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+font-family: var(--font-body);
+background-color: var(--bg-primary);
+color: var(--text-primary);
+line-height: 1.6;
+transition: background-color 0.5s ease, color 0.5s ease;
+}
+h1, h2, h3, h4 {
+font-family: var(--font-display);
+font-weight: 500;
+letter-spacing: -0.02em;
+line-height: 1.1;
+}
+[data-theme="brutalist"] * { border-width: 2px !important; }
+
+.grid-pattern {
+background-image:
+linear-gradient(var(--border) 1px, transparent 1px),
+linear-gradient(90deg, var(--border) 1px, transparent 1px);
+background-size: 40px 40px;
+}
+
+.theme-transition {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: var(--accent);
+z-index: 9998;
+pointer-events: none;
+transform: scaleY(0);
+transform-origin: top;
+transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.theme-transition.active { transform: scaleY(1); }
+
+.magnetic-btn { transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+/* Legal prose styles */
+.prose h2 {
+font-size: 1.5rem;
+font-weight: 600;
+margin-top: 3rem;
+margin-bottom: 1rem;
+}
+.prose h2:first-child { margin-top: 0; }
+.prose h3 {
+font-size: 1.125rem;
+font-weight: 600;
+margin-top: 2rem;
+margin-bottom: 0.75rem;
+}
+.prose p { margin-bottom: 1.25rem; color: var(--text-secondary); }
+.prose ul {
+margin: 0 0 1.25rem 1.25rem;
+list-style: disc;
+color: var(--text-secondary);
+}
+.prose li { margin-bottom: 0.5rem; }
+.prose a { color: var(--accent); text-decoration: underline; }
+.prose a:hover { color: var(--accent-hover); }
+.prose strong { color: var(--text-primary); font-weight: 600; }
+
+@media (max-width: 768px) {
+.mobile-tap { min-height: 44px; min-width: 44px; }
+}
+</style>
+</head>
+<body data-theme="minimal">
+
+<!-- Theme Transition Overlay -->
+<div class="theme-transition" id="themeTransition"></div>
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-[var(--border)] px-6 lg:px-12 py-4 flex justify-between items-center" id="navbar">
+<a href="/" class="text-xl lg:text-2xl font-bold tracking-tighter font-[var(--font-display)] magnetic-btn mobile-tap flex items-center" data-magnetic>
+BASELINE<span class="text-[var(--text-muted)]">.</span>
+</a>
+
+<div class="hidden md:flex items-center gap-10">
+<a href="/#work" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Work</a>
+<a href="/apps/" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Apps</a>
+<a href="/#studio" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Studio</a>
+<a href="/start.html" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Contact</a>
+</div>
+
+<div class="flex items-center gap-3">
+<button id="themeToggle" class="w-12 h-12 rounded-full border border-[var(--border-strong)] flex items-center justify-center hover:bg-[var(--bg-secondary)] transition-all magnetic-btn mobile-tap" data-magnetic aria-label="Change theme">
+<i data-lucide="palette" class="w-5 h-5"></i>
+</button>
+<a href="/" class="md:hidden w-12 h-12 flex items-center justify-center mobile-tap" aria-label="Back to home">
+<i data-lucide="arrow-left" class="w-5 h-5"></i>
+</a>
+</div>
+</nav>
+
+<!-- Theme Selector Modal -->
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="themeModal" role="dialog" aria-modal="true">
+<div class="absolute top-24 right-6 left-6 md:left-auto md:right-12 bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] p-6 md:p-8 w-full md:w-80 shadow-2xl" id="themePanel">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-[var(--font-display)] text-xl font-semibold">Select Theme</h3>
+<button id="closeThemeModal" class="hover:text-[var(--accent-hover)] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[var(--bg-secondary)] transition-all" aria-label="Close theme selector">
+<i data-lucide="x" class="w-5 h-5"></i>
+</button>
+</div>
+<div class="space-y-4">
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="minimal">
+<div class="w-10 h-10 rounded-full bg-[#fafafa] border-2 border-[#171717] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Minimal</div><div class="text-sm text-[var(--text-muted)]">Clean & Swiss</div></div>
+</button>
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="cyberpunk">
+<div class="w-10 h-10 rounded-none bg-[#0a0a0f] border-2 border-[#00f0ff] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Cyberpunk</div><div class="text-sm text-[var(--text-muted)]">Neon & Noir</div></div>
+</button>
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="brutalist">
+<div class="w-10 h-10 rounded-none bg-[#ff0000] border-2 border-[#000000] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Brutalist</div><div class="text-sm text-[var(--text-muted)]">Raw & Bold</div></div>
+</button>
+<button class="theme-option w-full text-left p-4 rounded-[var(--radius)] border border-[var(--border)] hover:border-[var(--accent)] transition-all flex items-center gap-4" data-theme="organic">
+<div class="w-10 h-10 rounded-full bg-[#f7f3e9] border-2 border-[#8b4513] flex-shrink-0"></div>
+<div><div class="font-medium text-base">Organic</div><div class="text-sm text-[var(--text-muted)]">Warm & Natural</div></div>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Header -->
+<section class="relative pt-32 pb-10 md:pt-40 md:pb-14 px-6 lg:px-12 overflow-hidden">
+<div class="absolute inset-0 grid-pattern opacity-30 pointer-events-none"></div>
+<div class="container mx-auto max-w-3xl relative z-10">
+<span class="inline-block px-4 py-2 rounded-full border border-[var(--border-strong)] text-sm font-medium text-[var(--text-secondary)] mb-8">
+Legal
+</span>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-[var(--font-display)] font-bold leading-[0.95] tracking-tight mb-6">
+Privacy Policy
+</h1>
+<p class="text-[var(--text-muted)] text-sm">Last updated: June 4, 2026</p>
+</div>
+</section>
+
+<!-- Content -->
+<section class="px-6 lg:px-12 pb-24">
+<div class="container mx-auto max-w-3xl">
+<div class="prose">
+
+<p>Baseline Designs ("Baseline Designs," "we," "us," or "I") is an independent design studio. This Privacy Policy explains what information we collect when you visit <strong>baselinedesigns.com</strong> (the "Site") or contact us, how we use it, and the choices you have. By using the Site, you agree to the practices described here.</p>
+
+<h2>Information We Collect</h2>
+
+<h3>Information you give us directly</h3>
+<p>If you reach out through our contact form or by email, you choose what to share. This typically includes your name, email address, an optional company or project name, your project type, budget range, timeline, and any details you include in your message.</p>
+<p>Our contact form does not transmit your details to a server we control. When you submit it, the form opens your own email application with the message pre-filled, and the email is sent directly from you to <a href="mailto:hello@baselinedesigns.com">hello@baselinedesigns.com</a>. We receive that information only when you send the email.</p>
+
+<h3>Information collected automatically</h3>
+<p>The Site is a static website. We do not run our own analytics, advertising, or tracking cookies. However, the Site is delivered through third-party infrastructure (see below), and those providers may automatically log standard technical information such as your IP address, browser type, and the pages requested, as part of delivering and securing the Site.</p>
+
+<h2>Third-Party Services</h2>
+<p>To keep the Site fast and lightweight, we load resources from, and rely on, third-party services. When your browser requests these resources, the relevant provider may receive your IP address and request information under its own privacy policy:</p>
+<ul>
+<li><strong>GitHub Pages</strong> — hosting for the Site.</li>
+<li><strong>Google Fonts</strong> — web fonts used across the Site.</li>
+<li><strong>Content delivery networks</strong> (such as unpkg and Cloudflare-hosted CDNs) — for styling and interface scripts.</li>
+<li><strong>Your email provider</strong> — when you use the contact form or email us directly.</li>
+</ul>
+<p>We do not control and are not responsible for the privacy practices of these third parties. We encourage you to review their policies.</p>
+
+<h2>How We Use Information</h2>
+<p>We use the information you send us only to:</p>
+<ul>
+<li>Respond to your inquiry and communicate with you about a potential or active project;</li>
+<li>Prepare proposals, scope work, and deliver services you've engaged us for; and</li>
+<li>Keep records of our correspondence and engagements.</li>
+</ul>
+<p>We do not sell your personal information, and we do not use it for advertising.</p>
+
+<h2>How We Share Information</h2>
+<p>We do not share your personal information except in limited cases: with trusted specialists or contractors brought in to help deliver a project (and only as needed for that work), with service providers that operate our infrastructure (such as our email and hosting providers), or where required by law.</p>
+
+<h2>Data Retention</h2>
+<p>We keep correspondence and project information for as long as needed to respond to you, deliver and maintain our services, and meet legal, accounting, or recordkeeping obligations. You may ask us to delete information you've sent us, and we'll honor that request where we're not required to retain it.</p>
+
+<h2>Your Rights</h2>
+<p>Depending on where you live, you may have the right to access, correct, or delete the personal information we hold about you, or to object to or restrict certain uses. To exercise any of these rights, email us at <a href="mailto:hello@baselinedesigns.com">hello@baselinedesigns.com</a> and we'll respond within a reasonable timeframe.</p>
+
+<h2>Children's Privacy</h2>
+<p>The Site is intended for business clients and is not directed to children under 16. We do not knowingly collect personal information from children. If you believe a child has provided us information, please contact us and we will delete it.</p>
+
+<h2>Security</h2>
+<p>We take reasonable measures to protect the information you send us. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+
+<h2>Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. When we do, we'll revise the "Last updated" date above. Material changes will be reflected on this page; your continued use of the Site after changes take effect constitutes acceptance of the updated policy.</p>
+
+<h2>Contact</h2>
+<p>Questions about this Privacy Policy or how we handle your information? Email <a href="mailto:hello@baselinedesigns.com">hello@baselinedesigns.com</a>.</p>
+
+<p class="mt-12 pt-8 border-t border-[var(--border)]"><a href="/">← Back to home</a> · <a href="/terms.html">Terms of Service</a></p>
+
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="px-6 lg:px-12 py-16 border-t-2 border-[var(--border)] bg-[var(--bg-secondary)]">
+<div class="container mx-auto max-w-7xl">
+<div class="grid md:grid-cols-3 gap-12 mb-16">
+<div class="md:col-span-2">
+<div class="text-3xl font-bold tracking-tighter font-[var(--font-display)] mb-4">
+BASELINE<span class="text-[var(--text-muted)]">.</span>
+</div>
+<p class="text-[var(--text-secondary)] max-w-md leading-relaxed mb-6">
+Independent design studio crafting brand identities and digital experiences. Personal attention, cross-disciplinary craft, and a focus on lasting quality.
+</p>
+<div class="flex gap-6 text-sm font-medium">
+<a href="/privacy.html" class="hover:text-[var(--accent)] transition-colors">Privacy</a>
+<a href="/terms.html" class="hover:text-[var(--accent)] transition-colors">Terms</a>
+</div>
+</div>
+<div>
+<h4 class="font-[var(--font-display)] font-bold text-lg mb-4">Contact</h4>
+<ul class="space-y-3 text-[var(--text-secondary)]">
+<li class="flex items-start gap-3">
+<i data-lucide="mail" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
+<a href="mailto:hello@baselinedesigns.com" class="hover:text-[var(--accent)] transition-colors">hello@baselinedesigns.com</a>
+</li>
+<li class="flex items-start gap-3">
+<i data-lucide="globe" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
+<span>Working remotely with clients worldwide</span>
+</li>
+<li class="flex items-start gap-3">
+<i data-lucide="shopping-bag" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>
+<a href="https://sales.baselinedesigns.com" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition-colors">Local business sites ↗</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-sm text-[var(--text-muted)]">© 2026 Baseline Designs. Independent designer.</div>
+<div class="text-sm text-[var(--text-muted)]">Crafted with precision. Designed to endure.</div>
+</div>
+</div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+// Magnetic buttons (desktop only)
+if (window.matchMedia('(pointer: fine)').matches) {
+document.querySelectorAll('[data-magnetic]').forEach(btn => {
+btn.addEventListener('mousemove', (e) => {
+const rect = btn.getBoundingClientRect();
+const x = e.clientX - rect.left - rect.width / 2;
+const y = e.clientY - rect.top - rect.height / 2;
+btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+});
+btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
+});
+}
+
+// Theme switching
+const themeToggle = document.getElementById('themeToggle');
+const themeModal = document.getElementById('themeModal');
+const themePanel = document.getElementById('themePanel');
+const closeThemeModal = document.getElementById('closeThemeModal');
+const themeOptions = document.querySelectorAll('.theme-option');
+const themeTransition = document.getElementById('themeTransition');
+
+themeToggle.addEventListener('click', () => {
+themeModal.classList.remove('opacity-0', 'pointer-events-none');
+});
+closeThemeModal.addEventListener('click', () => {
+themeModal.classList.add('opacity-0', 'pointer-events-none');
+});
+themeModal.addEventListener('click', (e) => {
+if (e.target === themeModal) themeModal.classList.add('opacity-0', 'pointer-events-none');
+});
+themeOptions.forEach(option => {
+option.addEventListener('click', () => {
+const newTheme = option.dataset.theme;
+const currentTheme = document.body.dataset.theme;
+if (newTheme !== currentTheme) {
+themeTransition.classList.add('active');
+setTimeout(() => {
+document.body.dataset.theme = newTheme;
+themeTransition.classList.remove('active');
+}, 600);
+}
+themeModal.classList.add('opacity-0', 'pointer-events-none');
+});
+});
+</script>
+</body>
+</html>
