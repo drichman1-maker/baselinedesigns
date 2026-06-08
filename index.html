@@ -389,6 +389,10 @@ section {
 padding: 40px 16px !important;
 }
 }
+
+/* Hero must clear the fixed navbar (the blanket section override above strips its top padding) */
+section.min-h-screen { padding-top: 144px !important; padding-bottom: 72px !important; }
+@media (max-width: 768px) { section.min-h-screen { padding-top: 104px !important; } }
 </style>
 </head>
 <body data-theme="minimal">
