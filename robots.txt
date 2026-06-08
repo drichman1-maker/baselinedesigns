@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.baselinedesigns.com/sitemap.xml
+Sitemap: https://design.i8cap.com/sitemap.xml
