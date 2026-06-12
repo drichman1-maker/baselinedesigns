@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>i8 Designs — Custom Design Studio for Founders & Artists</title>
 <meta name="description" content="An independent custom design studio. Brand identity, websites, and visual systems for founders, artists, and small firms. Custom engagements from $2,500.">
+<link rel="canonical" href="https://design.i8cap.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -25,6 +26,22 @@
 <!-- Favicon -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "i8 Designs",
+  "description": "An independent custom design studio. Brand identity, websites, and visual systems for founders, artists, and small firms. Custom engagements from $2,500.",
+  "url": "https://design.i8cap.com/",
+  "image": "https://design.i8cap.com/images/og-image.png",
+  "email": "douglasrichman1@gmail.com",
+  "priceRange": "$2,500+",
+  "areaServed": { "@type": "Place", "name": "Worldwide" },
+  "knowsAbout": ["Brand Identity", "Web Design", "UI/UX Systems", "Art Direction", "Motion", "Visual Strategy"]
+}
+</script>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -840,7 +857,7 @@ Let's create<br>
 <span class="text-[var(--text-muted)]">something bold.</span>
 </h2>
 <p class="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto mb-12">
-Custom brand, web, and product engagements from $2,500. Tell me what you're working on, and I usually reply within 24 hours.
+Custom brand, web, and product engagements from $2,500. Need a full iOS or web app built? Those run through my product studio, CodeMode, from $5,000. Tell me what you're working on, and I usually reply within 24 hours.
 </p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
 <a href="/start.html" class="magnetic-btn inline-flex items-center justify-center gap-3 px-10 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium text-lg rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all mobile-tap" data-magnetic>
@@ -911,9 +928,14 @@ Crafted with precision. Designed to endure.
 // Initialize Lucide icons
 lucide.createIcons();
 
-// Kick off animations on load
+// Kick off animations on load — respect reduced-motion preference.
+// When reduced motion is requested we skip GSAP entirely, so content
+// renders at its natural (fully visible) state with no entrance or
+// scroll-reverse motion.
 window.addEventListener('load', () => {
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 initAnimations();
+}
 });
 
 // Magnetic buttons (desktop only)
