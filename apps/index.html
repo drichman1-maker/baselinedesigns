@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apps — i8 Designs</title>
-<meta name="description" content="Side projects from i8 Designs. Independent web apps for price tracking, deal hunting, and consumer intelligence across Apple products, GPUs, wellness devices, baby gear, robotics, retro gaming, graded coins, sports cards, comics, Tesla parts, grills, home appliances, music gear, and party planning.">
+<meta name="description" content="Side projects from i8 Designs. Independent web apps for price tracking, deal hunting, and consumer intelligence across Apple products, GPUs, wellness devices, baby gear, robotics, retro gaming, graded coins, sports cards, comics, Tesla parts, home gear, music gear, and party planning.">
 <link rel="canonical" href="https://design.i8cap.com/apps/">
 
 <!-- Open Graph -->
@@ -29,6 +29,7 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
+<script defer src="https://analytics-dashboard-six-mu.vercel.app/click-tracker.js" data-host="design.i8cap.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -87,7 +88,7 @@ html, body { background: var(--bg-primary); color: var(--text-primary); font-fam
       <span class="text-[var(--text-secondary)]">Side projects from the studio.</span>
     </h1>
     <p class="text-xl md:text-2xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
-      Independent web apps for price tracking and consumer intelligence. Each one built to scratch a specific itch: Apple deals, GPU drops, wellness devices, baby gear, robotics, retro gaming, graded coins, sports cards, comics, Tesla parts, grills, home appliances, music gear, party planning, focus tools.
+      Independent web apps for price tracking and consumer intelligence. Each one built to scratch a specific itch: Apple deals, GPU drops, wellness devices, baby gear, robotics, retro gaming, graded coins, sports cards, comics, Tesla parts, home gear, music gear, party planning, focus tools.
     </p>
   </div>
 </section>
@@ -268,14 +269,14 @@ html, body { background: var(--bg-primary); color: var(--text-primary); font-fam
         </div>
       </a>
 
-      <!-- Tesla Parts -->
-      <a href="https://tesla-parts.vercel.app" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+      <!-- EV Drip (renamed from Tesla Parts 2026-07-24) -->
+      <a href="https://evdrip.codemodeapps.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="/apps/shots/tesla.png" alt="Tesla Parts site preview" loading="lazy" class="app-tile w-full h-full object-cover object-top">
+          <img src="/apps/shots/evdrip.png" alt="EV Drip site preview" loading="lazy" class="app-tile w-full h-full object-cover object-top">
         </div>
         <div class="p-6">
           <div class="flex justify-between items-start gap-4 mb-3">
-            <h3 class="text-2xl font-[var(--font-display)] font-bold">Tesla Parts</h3>
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">EV Drip</h3>
             <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
           </div>
           <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Curated aftermarket Tesla parts and accessories. Interior, exterior, and performance upgrades reviewed for every model.</p>
@@ -287,40 +288,21 @@ html, body { background: var(--bg-primary); color: var(--text-primary); font-fam
         </div>
       </a>
 
-      <!-- Grill Drip -->
-      <a href="https://grills.codemodeapps.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
+      <!-- HomeGear -->
+      <a href="https://homegear-frontend.vercel.app" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="/apps/shots/grills.png" alt="Grill Drip site preview" loading="lazy" class="app-tile w-full h-full object-cover object-top">
+          <img src="/apps/shots/homegear.png" alt="HomeGear site preview" loading="lazy" class="app-tile w-full h-full object-cover object-top">
         </div>
         <div class="p-6">
           <div class="flex justify-between items-start gap-4 mb-3">
-            <h3 class="text-2xl font-[var(--font-display)] font-bold">Grill Drip</h3>
+            <h3 class="text-2xl font-[var(--font-display)] font-bold">HomeGear</h3>
             <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
           </div>
-          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Live price comparison for gas, pellet, charcoal, and kamado grills. 110+ grills from 24 brands tracked across 8 retailers.</p>
+          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Unified home gear comparison for appliances, grills, smokers, portable power stations, and solar generator kits in one catalog.</p>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
             <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
-            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Grilling</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Appliance Drip -->
-      <a href="https://appliances.codemodeapps.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="/apps/shots/appliances.png" alt="Appliance Drip site preview" loading="lazy" class="app-tile w-full h-full object-cover object-top">
-        </div>
-        <div class="p-6">
-          <div class="flex justify-between items-start gap-4 mb-3">
-            <h3 class="text-2xl font-[var(--font-display)] font-bold">Appliance Drip</h3>
-            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
-          </div>
-          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Home appliance price intelligence. Refrigerators, ranges, dishwashers, and laundry from premium brands, compared across 7 retailers.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
-            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
-            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Appliances</span>
+            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Home Gear</span>
           </div>
         </div>
       </a>
@@ -340,25 +322,6 @@ html, body { background: var(--bg-primary); color: var(--text-primary); font-fam
             <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
             <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
             <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Music Gear</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Power Drip -->
-      <a href="https://power.codemodeapps.com" target="_blank" rel="noopener" class="app-card group block bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="/apps/shots/power.png" alt="Power Drip site preview" loading="lazy" class="app-tile w-full h-full object-cover object-top">
-        </div>
-        <div class="p-6">
-          <div class="flex justify-between items-start gap-4 mb-3">
-            <h3 class="text-2xl font-[var(--font-display)] font-bold">Power Drip</h3>
-            <span class="text-sm text-[var(--text-muted)] font-medium shrink-0">Visit ↗</span>
-          </div>
-          <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Portable power station and solar generator price comparison. EcoFlow, Jackery, Bluetti, Anker SOLIX, and Goal Zero tracked across 11 retailers, hurricane-season ready.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Next.js</span>
-            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Affiliate</span>
-            <span class="px-3 py-1 border border-[var(--border)] rounded-full text-xs">Power</span>
           </div>
         </div>
       </a>
