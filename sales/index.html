@@ -395,6 +395,23 @@
       color: var(--text-muted);
       font-size: 0.9rem;
     }
+    .footer-links {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      justify-content: center;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .footer-links a:hover {
+      color: var(--text);
+      border-bottom-color: currentColor;
+    }
     
     @media (max-width: 768px) {
       header { padding: 16px 0; }
@@ -666,6 +683,11 @@
   <footer>
     <div class="container">
       <p>© 2026 i8 Designs. Custom websites, no monthly fees.</p>
+      <div class="footer-links">
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="mailto:douglasrichman1@gmail.com">Contact</a>
+      </div>
     </div>
   </footer>
 </body>
