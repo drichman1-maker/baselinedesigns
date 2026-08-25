@@ -41,7 +41,11 @@
   --bg-tertiary: #ffffff;
   --text-primary: #171717;
   --text-secondary: #525252;
-  --text-muted: #a3a3a3;
+  /* was #a3a3a3, which measured 2.31:1 on --bg-secondary, 2.42:1 on
+     --bg-primary and 2.52:1 on white: nowhere near the 4.5:1 AA needs, and
+     this token carries most of the body copy on the site. #6b6b6b measures
+     4.84:1 on the darkest of those three grounds. */
+  --text-muted: #6b6b6b;
   --accent: #171717;
   --accent-hover: #404040;
   --border: #e5e5e5;
@@ -62,11 +66,42 @@ html, body { background: var(--bg-primary); color: var(--text-primary); font-fam
 .tile-robotsniper { background: linear-gradient(135deg, #7f1d1d 0%, #ef4444 100%); }
 .tile-rumbledeals { background: linear-gradient(135deg, #7c2d12 0%, #f97316 100%); }
 .tile-lowkey    { background: linear-gradient(135deg, #831843 0%, #ec4899 100%); }
+
+/* Skip link and focus ring, added for keyboard and screen-reader users.
+   The skip link is visible only on focus. It uses the darkened accent, since
+   white on the brand --accent measures 3.83:1, under the 4.5:1 AA needs. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.625rem 1rem;
+  background: #cf2f4b;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 1rem; }
+/* A focus ring that can actually be seen. A border-colour change alone is
+   easy to miss and does not reliably clear the 3:1 WCAG asks of a focus
+   indicator. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #ff8098;
+  outline-offset: 2px;
+}
 </style>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a8593dd79e60489ab2d31c34c22c8580"}'></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- Navigation matches design.i8cap.com main site -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-[var(--border)] px-6 lg:px-12 py-4 flex justify-between items-center">
@@ -80,6 +115,7 @@ html, body { background: var(--bg-primary); color: var(--text-primary); font-fam
     <a href="/#contact" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors py-2">Contact</a>
   </div>
 </nav>
+<main id="main">
 
 <!-- Hero -->
 <section class="pt-40 pb-16 px-6 lg:px-12">
@@ -384,6 +420,7 @@ html, body { background: var(--bg-primary); color: var(--text-primary); font-fam
 </section>
 
 <!-- Footer -->
+</main>
 <footer class="border-t border-[var(--border)] px-6 lg:px-12 py-12">
   <div class="container mx-auto max-w-7xl flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center justify-between">
     <div>

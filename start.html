@@ -42,7 +42,11 @@
 --bg-tertiary: #ffffff;
 --text-primary: #171717;
 --text-secondary: #525252;
---text-muted: #a3a3a3;
+/* was #a3a3a3, which measured 2.31:1 on --bg-secondary, 2.42:1 on
+     --bg-primary and 2.52:1 on white: nowhere near the 4.5:1 AA needs, and
+     this token carries most of the body copy on the site. #6b6b6b measures
+     4.84:1 on the darkest of those three grounds. */
+  --text-muted: #6b6b6b;
 --accent: #171717;
 --accent-hover: #404040;
 --border: #e5e5e5;
@@ -57,7 +61,7 @@
 --font-body: 'Inter', sans-serif;
 }
 
-[data-theme="cyberpunk"] {
+body[data-theme="cyberpunk"] {
 --bg-primary: #0a0a0f;
 --bg-secondary: #12121a;
 --bg-tertiary: #1a1a2e;
@@ -71,7 +75,7 @@
 --radius: 0;
 }
 
-[data-theme="brutalist"] {
+body[data-theme="brutalist"] {
 --bg-primary: #ffffff;
 --bg-secondary: #ff0000;
 --bg-tertiary: #0000ff;
@@ -85,7 +89,7 @@
 --radius: 0;
 }
 
-[data-theme="organic"] {
+body[data-theme="organic"] {
 --bg-primary: #f7f3e9;
 --bg-secondary: #e8e0d0;
 --bg-tertiary: #d4c5b0;
@@ -114,7 +118,7 @@ font-weight: 500;
 letter-spacing: -0.02em;
 line-height: 1.1;
 }
-[data-theme="brutalist"] * { border-width: 2px !important; }
+body[data-theme="brutalist"] * { border-width: 2px !important; }
 
 .grid-pattern {
 background-image:
@@ -139,17 +143,59 @@ transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
 .magnetic-btn { transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 /* Form field focus styles */
-.form-field:focus { outline: none; border-color: var(--accent); }
+/* Scoped to :not(:focus-visible) on purpose. The border tint alone is easy to
+   miss as a focus indicator, so keyboard focus keeps the real outline from the
+   :focus-visible rule; only pointer focus drops it. */
+.form-field:focus:not(:focus-visible) { outline: none; }
+.form-field:focus { border-color: var(--accent); }
 .form-field:invalid:not(:placeholder-shown) { border-color: var(--error); }
 
 @media (max-width: 768px) {
 .mobile-tap { min-height: 44px; min-width: 44px; }
 }
+
+/* Skip link and focus ring, added for keyboard and screen-reader users.
+   The skip link is visible only on focus. It uses the darkened accent, since
+   white on the brand --accent measures 3.83:1, under the 4.5:1 AA needs. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.625rem 1rem;
+  background: #cf2f4b;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 1rem; }
+/* A focus ring that can actually be seen. A border-colour change alone is
+   easy to miss and does not reliably clear the 3:1 WCAG asks of a focus
+   indicator. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #ff8098;
+  outline-offset: 2px;
+}
+
+/* The theme picker previews each palette in its swatch circle, which is what
+   carries the colour. The label underneath was inheriting the previewed
+   theme's --text-muted, so the Cyberpunk and Organic rows rendered their own
+   muted colour on this page's light ground at 4.15:1 and 4.49:1. Read the
+   label in the current theme instead; the swatch still does the previewing. */
+.theme-option .text-sm { color: var(--text-secondary); }
 </style>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a8593dd79e60489ab2d31c34c22c8580"}'></script>
 </head>
 <body data-theme="minimal">
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- Theme Transition Overlay -->
 <div class="theme-transition" id="themeTransition"></div>
@@ -176,6 +222,7 @@ i8<span class="text-[var(--text-muted)]">Designs</span>
 </a>
 </div>
 </nav>
+<main id="main">
 
 <!-- Theme Selector Modal -->
 <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="themeModal" role="dialog" aria-modal="true">
@@ -319,6 +366,12 @@ I take on a small number of custom engagements each quarter, starting at $2,500.
 <i data-lucide="send" class="w-5 h-5"></i>
 </button>
 <p id="formStatus" class="text-center text-sm mt-4"></p>
+<!-- Notice at the point of action. The Terms carry a binding arbitration
+     clause; a footer link alone is browsewrap and is routinely held
+     unenforceable. Do not remove. -->
+<p class="text-center text-xs text-[var(--text-secondary)] mt-3">
+By sending this you agree to our <a href="/terms.html" class="underline hover:text-[var(--accent)]">Terms</a> and <a href="/privacy.html" class="underline hover:text-[var(--accent)]">Privacy Policy</a>.
+</p>
 <p class="text-center text-sm text-[var(--text-muted)] mt-4">
 Goes straight to my inbox. I usually reply within 24 hours.<br>
 Prefer plain email? <a href="mailto:douglasrichman1@gmail.com" class="underline hover:text-[var(--accent)]">douglasrichman1@gmail.com</a>
@@ -389,6 +442,7 @@ Anything time-sensitive? Email <a href="mailto:douglasrichman1@gmail.com" class=
 </section>
 
 <!-- Footer -->
+</main>
 <footer class="px-6 lg:px-12 py-16 border-t-2 border-[var(--border)] bg-[var(--bg-secondary)]">
 <div class="container mx-auto max-w-7xl">
 <div class="grid md:grid-cols-3 gap-12 mb-16">
@@ -401,7 +455,7 @@ Independent design studio crafting brand identities and digital experiences. Per
 </p>
 </div>
 <div>
-<h4 class="font-[var(--font-display)] font-bold text-lg mb-4">Contact</h4>
+<h3 class="font-[var(--font-display)] font-bold text-lg mb-4">Contact</h3>
 <ul class="space-y-3 text-[var(--text-secondary)]">
 <li class="flex items-start gap-3">
 <i data-lucide="mail" class="w-5 h-5 mt-0.5 text-[var(--text-muted)]"></i>

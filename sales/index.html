@@ -59,6 +59,12 @@
       --text: #fafafa;
       --text-muted: #a1a1a1;
       --accent: #e94560;
+      /* White on --accent measures 3.83:1, under the 4.5:1 AA needs for
+         button and badge labels. These are the same hue taken darker, used
+         only where the accent sits BEHIND white text, so accent-as-text and
+         accent-as-border keep the exact brand colour. */
+      --accent-strong: #cf2f4b;
+      --accent-strong-hover: #b8253f;
       --border: #2a2a2a;
     }
     html { scroll-behavior: smooth; }
@@ -111,11 +117,13 @@
       transition: all 0.2s;
     }
     .btn-primary {
-      background: var(--accent);
+      background: var(--accent-strong);
       color: white;
     }
     .btn-primary:hover {
-      background: #ff5a75;
+      /* darker, not lighter: the old #ff5a75 hover measured 3.01:1, so the
+         label got harder to read exactly when the user was aiming at it */
+      background: var(--accent-strong-hover);
       transform: translateY(-2px);
     }
     .btn-secondary {
@@ -201,7 +209,7 @@
       top: -12px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--accent);
+      background: var(--accent-strong);
       color: white;
       padding: 6px 16px;
       border-radius: 20px;
@@ -290,7 +298,9 @@
     .demo-info {
       padding: 24px;
     }
-    .demo-info h4 {
+    /* was h4: the section heading above these is an h2, so h4 skipped a
+       level. Same styling, correct level. */
+    .demo-info h3 {
       font-size: 1.1rem;
       margin-bottom: 8px;
     }
@@ -425,11 +435,42 @@
       .hero { padding: 120px 0 60px; }
       .hero h1 { font-size: 2.25rem; }
     }
-  </style>
+  
+/* Skip link and focus ring, added for keyboard and screen-reader users.
+   The skip link is visible only on focus. It uses the darkened accent, since
+   white on the brand --accent measures 3.83:1, under the 4.5:1 AA needs. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.625rem 1rem;
+  background: #cf2f4b;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 1rem; }
+/* A focus ring that can actually be seen. A border-colour change alone is
+   easy to miss and does not reliably clear the 3:1 WCAG asks of a focus
+   indicator. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #ff8098;
+  outline-offset: 2px;
+}
+</style>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a8593dd79e60489ab2d31c34c22c8580"}'></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
   <header>
     <div class="container">
       <a href="#" class="logo">i8<span>Designs</span></a>
@@ -442,6 +483,7 @@
       <a href="https://calendly.com/douglasrichman1/30min" class="btn btn-secondary" target="_blank">Book a Call</a>
     </div>
   </header>
+<main id="main">
 
   <section class="hero">
     <div class="container">
@@ -523,7 +565,7 @@
             <img src="/sales/previews/barbershop.jpg" alt="Shear Edge Cuts demo site preview" loading="lazy">
           </div>
           <div class="demo-info">
-            <h4>Shear Edge Cuts</h4>
+            <h3>Shear Edge Cuts</h3>
             <p>Barbershop in Coral Springs, FL</p>
             <a href="https://demo-barbershop-tau.vercel.app" class="demo-link" target="_blank">View Demo →</a>
           </div>
@@ -534,7 +576,7 @@
             <img src="/sales/previews/hvac.jpg" alt="ClimatePro HVAC demo site preview" loading="lazy">
           </div>
           <div class="demo-info">
-            <h4>ClimatePro HVAC</h4>
+            <h3>ClimatePro HVAC</h3>
             <p>Heating & cooling services</p>
             <a href="https://test-hvac.vercel.app" class="demo-link" target="_blank">View Demo →</a>
           </div>
@@ -545,7 +587,7 @@
             <img src="/sales/previews/landscaping.jpg" alt="TerraScape Landscaping demo site preview" loading="lazy">
           </div>
           <div class="demo-info">
-            <h4>TerraScape Landscaping</h4>
+            <h3>TerraScape Landscaping</h3>
             <p>Landscape design & maintenance</p>
             <a href="https://demo-landscaping.vercel.app" class="demo-link" target="_blank">View Demo →</a>
           </div>
@@ -556,7 +598,7 @@
             <img src="/sales/previews/medical.jpg" alt="Medical Practice demo site preview" loading="lazy">
           </div>
           <div class="demo-info">
-            <h4>Medical Practice</h4>
+            <h3>Medical Practice</h3>
             <p>Healthcare & medical services</p>
             <a href="https://demo-medical-v2.vercel.app" class="demo-link" target="_blank">View Demo →</a>
           </div>
@@ -567,7 +609,7 @@
             <img src="/sales/previews/electrician.jpg" alt="VoltEdge Electric demo site preview" loading="lazy">
           </div>
           <div class="demo-info">
-            <h4>VoltEdge Electric</h4>
+            <h3>VoltEdge Electric</h3>
             <p>24/7 Emergency electricians</p>
             <a href="https://demo-electrician.vercel.app" class="demo-link" target="_blank">View Demo →</a>
           </div>
@@ -578,7 +620,7 @@
             <img src="/sales/previews/pool.jpg" alt="Pool Services demo site preview" loading="lazy">
           </div>
           <div class="demo-info">
-            <h4>Pool Services</h4>
+            <h3>Pool Services</h3>
             <p>Pool cleaning & maintenance</p>
             <a href="https://demo-pool-ivory.vercel.app" class="demo-link" target="_blank">View Demo →</a>
           </div>
@@ -680,7 +722,8 @@
     </div>
   </section>
 
-  <footer>
+  </main>
+<footer>
     <div class="container">
       <p>© 2026 i8 Designs. Custom websites, no monthly fees.</p>
       <div class="footer-links">
