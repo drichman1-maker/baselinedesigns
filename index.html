@@ -123,7 +123,7 @@ body[data-theme="organic"] {
 --bg-tertiary: #d4c5b0;
 --text-primary: #2c241b;
 --text-secondary: #5a4a3a;
---text-muted: #8b7355;
+--text-muted: #674c34;
 --accent: #8b4513;
 --accent-hover: #a0522d;
 --border: #d4c5b0;
@@ -396,6 +396,16 @@ padding-top: 7rem;
 padding-bottom: 4rem;
 }
 
+@media (prefers-reduced-motion: reduce) {
+html { scroll-behavior: auto; }
+*, *::before, *::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+}
+
 .hero-grid {
 grid-template-columns: minmax(0, 1fr);
 width: 100%;
@@ -448,7 +458,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #ff8098;
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -476,16 +486,16 @@ i8<span class="text-[var(--text-muted)]">Designs</span>
 
 <!-- Desktop Navigation - IMPROVED: Better spacing -->
 <div class="hidden md:flex items-center gap-10">
-<a href="#work" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Work</a>
-<a href="#studio" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Studio</a>
-<a href="/start.html" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2" data-magnetic>Contact</a>
+<a href="#work" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2 min-h-11 inline-flex items-center" data-magnetic>Work</a>
+<a href="#studio" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2 min-h-11 inline-flex items-center" data-magnetic>Studio</a>
+<a href="/start.html" class="text-sm font-medium hover:text-[var(--accent-hover)] transition-colors magnetic-btn py-2 min-h-11 inline-flex items-center" data-magnetic>Contact</a>
 </div>
 
 <div class="flex items-center gap-3">
 <button id="themeToggle" class="w-12 h-12 rounded-full border border-[var(--border-strong)] flex items-center justify-center hover:bg-[var(--bg-secondary)] transition-all magnetic-btn mobile-tap" data-magnetic aria-label="Change theme">
 <i data-lucide="palette" class="w-5 h-5"></i>
 </button>
-<button class="md:hidden w-12 h-12 flex flex-col justify-center items-center gap-1.5 mobile-tap" id="mobileMenuBtn" aria-label="Toggle menu">
+<button class="md:hidden w-12 h-12 flex flex-col justify-center items-center gap-1.5 mobile-tap" id="mobileMenuBtn" aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false">
 <span class="w-6 h-0.5 bg-current transition-all origin-center"></span>
 <span class="w-6 h-0.5 bg-current transition-all origin-center"></span>
 </button>
@@ -494,7 +504,7 @@ i8<span class="text-[var(--text-muted)]">Designs</span>
 <main id="main">
 
 <!-- Mobile Menu - IMPROVED: Full screen, better spacing -->
-<div class="fixed inset-0 bg-[var(--bg-primary)] z-40 transform translate-x-full transition-transform duration-500 flex flex-col" id="mobileMenu">
+<div class="fixed inset-0 bg-[var(--bg-primary)] z-40 transform translate-x-full transition-transform duration-500 flex flex-col" id="mobileMenu" aria-hidden="true" inert>
 <div class="flex-1 flex flex-col items-start justify-center px-8 gap-8">
 <a href="#work" class="text-4xl font-[var(--font-display)] font-medium hover:text-[var(--accent-hover)] transition-colors mobile-link">Work</a>
 <a href="#studio" class="text-4xl font-[var(--font-display)] font-medium hover:text-[var(--accent-hover)] transition-colors mobile-link">Studio</a>
@@ -506,10 +516,10 @@ i8<span class="text-[var(--text-muted)]">Designs</span>
 </div>
 
 <!-- Theme Selector Modal - IMPROVED: Better spacing, accessibility -->
-<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="themeModal" role="dialog" aria-modal="true">
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="themeModal" role="dialog" aria-modal="true" aria-labelledby="themeDialogTitle" aria-hidden="true" inert>
 <div class="absolute top-24 right-6 left-6 md:left-auto md:right-12 bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] p-6 md:p-8 md:w-80 shadow-2xl transform scale-95 transition-transform duration-300" id="themePanel">
 <div class="flex justify-between items-center mb-8">
-<h3 class="font-[var(--font-display)] text-xl font-semibold">Select Theme</h3>
+<h3 class="font-[var(--font-display)] text-xl font-semibold" id="themeDialogTitle">Select Theme</h3>
 <button id="closeThemeModal" class="hover:text-[var(--accent-hover)] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[var(--bg-secondary)] transition-all" aria-label="Close theme selector">
 <i data-lucide="x" class="w-5 h-5"></i>
 </button>
@@ -1063,22 +1073,30 @@ const themePanel = document.getElementById('themePanel');
 const closeThemeModal = document.getElementById('closeThemeModal');
 const themeOptions = document.querySelectorAll('.theme-option');
 const themeTransition = document.getElementById('themeTransition');
+let themeReturnFocus = null;
 
-themeToggle.addEventListener('click', () => {
+function openThemePicker() {
+themeReturnFocus = document.activeElement;
+themeModal.removeAttribute('inert');
+themeModal.setAttribute('aria-hidden', 'false');
 themeModal.classList.remove('opacity-0', 'pointer-events-none');
 themePanel.classList.remove('scale-95');
-});
+closeThemeModal.focus();
+}
 
-closeThemeModal.addEventListener('click', () => {
+function closeThemePicker() {
 themeModal.classList.add('opacity-0', 'pointer-events-none');
 themePanel.classList.add('scale-95');
-});
+themeModal.setAttribute('aria-hidden', 'true');
+themeModal.setAttribute('inert', '');
+if (themeReturnFocus) themeReturnFocus.focus();
+}
+
+themeToggle.addEventListener('click', openThemePicker);
+closeThemeModal.addEventListener('click', closeThemePicker);
 
 themeModal.addEventListener('click', (e) => {
-if (e.target === themeModal) {
-themeModal.classList.add('opacity-0', 'pointer-events-none');
-themePanel.classList.add('scale-95');
-}
+if (e.target === themeModal) closeThemePicker();
 });
 
 themeOptions.forEach(option => {
@@ -1094,8 +1112,7 @@ themeTransition.classList.remove('active');
 }, 600);
 }
 
-themeModal.classList.add('opacity-0', 'pointer-events-none');
-themePanel.classList.add('scale-95');
+closeThemePicker();
 });
 });
 
@@ -1105,26 +1122,55 @@ const mobileMenu = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-link');
 let menuOpen = false;
 
-mobileMenuBtn.addEventListener('click', () => {
-menuOpen = !menuOpen;
-if (menuOpen) {
+function setMobileMenu(open) {
+menuOpen = open;
+mobileMenuBtn.setAttribute('aria-expanded', String(open));
+mobileMenu.setAttribute('aria-hidden', String(!open));
+if (open) {
+mobileMenu.removeAttribute('inert');
 mobileMenu.classList.remove('translate-x-full');
 mobileMenuBtn.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
 mobileMenuBtn.children[1].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+requestAnimationFrame(() => mobileLinks[0]?.focus());
 } else {
+mobileMenu.setAttribute('inert', '');
 mobileMenu.classList.add('translate-x-full');
 mobileMenuBtn.children[0].style.transform = 'none';
 mobileMenuBtn.children[1].style.transform = 'none';
 }
+}
+
+mobileMenuBtn.addEventListener('click', () => {
+setMobileMenu(!menuOpen);
 });
 
 mobileLinks.forEach(link => {
 link.addEventListener('click', () => {
-menuOpen = false;
-mobileMenu.classList.add('translate-x-full');
-mobileMenuBtn.children[0].style.transform = 'none';
-mobileMenuBtn.children[1].style.transform = 'none';
+setMobileMenu(false);
 });
+});
+
+document.addEventListener('keydown', (event) => {
+const themeIsOpen = themeModal.getAttribute('aria-hidden') === 'false';
+if (themeIsOpen && event.key === 'Tab') {
+const focusable = [...themePanel.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')];
+const first = focusable[0];
+const last = focusable[focusable.length - 1];
+if (event.shiftKey && document.activeElement === first) {
+event.preventDefault();
+last.focus();
+} else if (!event.shiftKey && document.activeElement === last) {
+event.preventDefault();
+first.focus();
+}
+}
+
+if (event.key !== 'Escape') return;
+if (themeIsOpen) closeThemePicker();
+if (menuOpen) {
+setMobileMenu(false);
+mobileMenuBtn.focus();
+}
 });
 
 // GSAP Animations
@@ -1167,6 +1213,7 @@ ease: "linear"
 // Section reveals
 gsap.utils.toArray('section').forEach(section => {
 const elements = section.querySelectorAll('h2, h3, p, .feature-card, .grid > div');
+if (!elements.length) return;
 gsap.from(elements, {
 scrollTrigger: {
 trigger: section,
@@ -1185,8 +1232,10 @@ ease: "power2.out"
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
+const href = this.getAttribute('href');
+if (href === '#') return;
 e.preventDefault();
-const target = document.querySelector(this.getAttribute('href'));
+const target = document.querySelector(href);
 if (target) {
 const offset = 100;
 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
