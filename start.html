@@ -95,7 +95,7 @@ body[data-theme="organic"] {
 --bg-tertiary: #d4c5b0;
 --text-primary: #2c241b;
 --text-secondary: #5a4a3a;
---text-muted: #8b7355;
+--text-muted: #674c34;
 --accent: #8b4513;
 --accent-hover: #a0522d;
 --border: #d4c5b0;
@@ -182,7 +182,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #ff8098;
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -192,6 +192,15 @@ select:focus-visible {
    muted colour on this page's light ground at 4.15:1 and 4.49:1. Read the
    label in the current theme instead; the swatch still does the previewing. */
 .theme-option .text-sm { color: var(--text-secondary); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a8593dd79e60489ab2d31c34c22c8580"}'></script>
@@ -226,10 +235,10 @@ i8<span class="text-[var(--text-muted)]">Designs</span>
 <main id="main">
 
 <!-- Theme Selector Modal -->
-<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="themeModal" role="dialog" aria-modal="true">
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="themeModal" role="dialog" aria-modal="true" aria-labelledby="themeDialogTitle" aria-hidden="true" inert>
 <div class="absolute top-24 right-6 left-6 md:left-auto md:right-12 bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-[var(--radius)] p-6 md:p-8 md:w-80 shadow-2xl" id="themePanel">
 <div class="flex justify-between items-center mb-8">
-<h3 class="font-[var(--font-display)] text-xl font-semibold">Select Theme</h3>
+<h3 class="font-[var(--font-display)] text-xl font-semibold" id="themeDialogTitle">Select Theme</h3>
 <button id="closeThemeModal" class="hover:text-[var(--accent-hover)] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[var(--bg-secondary)] transition-all" aria-label="Close theme selector">
 <i data-lucide="x" class="w-5 h-5"></i>
 </button>
@@ -503,15 +512,27 @@ const themePanel = document.getElementById('themePanel');
 const closeThemeModal = document.getElementById('closeThemeModal');
 const themeOptions = document.querySelectorAll('.theme-option');
 const themeTransition = document.getElementById('themeTransition');
+let themeReturnFocus = null;
 
-themeToggle.addEventListener('click', () => {
+function openThemePicker() {
+themeReturnFocus = document.activeElement;
+themeModal.removeAttribute('inert');
+themeModal.setAttribute('aria-hidden', 'false');
 themeModal.classList.remove('opacity-0', 'pointer-events-none');
-});
-closeThemeModal.addEventListener('click', () => {
+closeThemeModal.focus();
+}
+
+function closeThemePicker() {
 themeModal.classList.add('opacity-0', 'pointer-events-none');
-});
+themeModal.setAttribute('aria-hidden', 'true');
+themeModal.setAttribute('inert', '');
+if (themeReturnFocus) themeReturnFocus.focus();
+}
+
+themeToggle.addEventListener('click', openThemePicker);
+closeThemeModal.addEventListener('click', closeThemePicker);
 themeModal.addEventListener('click', (e) => {
-if (e.target === themeModal) themeModal.classList.add('opacity-0', 'pointer-events-none');
+if (e.target === themeModal) closeThemePicker();
 });
 themeOptions.forEach(option => {
 option.addEventListener('click', () => {
@@ -524,8 +545,11 @@ document.body.dataset.theme = newTheme;
 themeTransition.classList.remove('active');
 }, 600);
 }
-themeModal.classList.add('opacity-0', 'pointer-events-none');
+closeThemePicker();
 });
+});
+document.addEventListener('keydown', (event) => {
+if (event.key === 'Escape' && themeModal.getAttribute('aria-hidden') === 'false') closeThemePicker();
 });
 
 // Form submission — sends directly via web3forms
