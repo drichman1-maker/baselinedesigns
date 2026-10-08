@@ -152,7 +152,6 @@ font-family: var(--font-body);
 background-color: var(--bg-primary);
 color: var(--text-primary);
 transition: background-color 0.5s ease, color 0.5s ease;
-overflow-x: hidden;
 line-height: 1.6;
 }
 
@@ -166,19 +165,6 @@ line-height: 1.1;
 /* Tighter text */
 p {
 line-height: 1.5;
-}
-
-/* Reduced section spacing */
-section {
-padding-top: 4rem;
-padding-bottom: 4rem;
-}
-
-@media (max-width: 768px) {
-section {
-padding-top: 2.5rem;
-padding-bottom: 2.5rem;
-}
 }
 
 /* Custom scrollbar - preserved */
@@ -199,29 +185,14 @@ background: var(--text-primary);
 /* Fixed header offset for anchor links */
 section {
 scroll-margin-top: 120px;
-padding-top: 3rem;
 }
 
 /* Container padding */
 .container {
-padding-left: 1rem;
-padding-right: 1rem;
+padding-left: 0;
+padding-right: 0;
 max-width: 1200px;
 margin: 0 auto;
-}
-
-@media (min-width: 640px) {
-.container {
-padding-left: 1.5rem;
-padding-right: 1.5rem;
-}
-}
-
-@media (min-width: 1024px) {
-.container {
-padding-left: 2rem;
-padding-right: 2rem;
-}
 }
 
 /* Noise overlay for cyberpunk - preserved */
@@ -256,10 +227,6 @@ background-size: 30px 30px;
 /* Tighter spacing */
 .card {
 margin-bottom: 1.5rem;
-}
-
-.grid {
-gap: 1.5rem;
 }
 
 /* Reduced margins */
@@ -380,41 +347,80 @@ max-width: 75ch;
 margin-left: auto;
 margin-right: auto;
 }
-/* Team Framing & Mobile Fixes */
+/* Team framing */
 .solo-card, [data-card="solo"] {
 display: none !important;
 }
 
-section {
-padding: 60px 20px !important;
-min-height: auto !important;
+.hero-grid {
+align-items: start;
 }
 
-.hero {
-padding-top: 100px !important;
-padding-bottom: 60px !important;
-min-height: 60vh !important;
+.hero-aside {
+padding-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
-body {
-overflow-x: hidden !important;
-}
-h1 {
-font-size: 2.5rem !important;
-line-height: 1.2 !important;
-}
-h2 {
-font-size: 2rem !important;
-}
-section {
-padding: 40px 16px !important;
-}
+.hero-index {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+padding-bottom: 1.25rem;
+margin-bottom: 2rem;
+border-bottom: 1px solid var(--border-strong);
+font-size: 0.75rem;
+font-weight: 600;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(--text-muted);
 }
 
-/* Hero must clear the fixed navbar (the blanket section override above strips its top padding) */
-section.min-h-screen { padding-top: 144px !important; padding-bottom: 72px !important; }
-@media (max-width: 768px) { section.min-h-screen { padding-top: 104px !important; } }
+.hero-title {
+font-size: clamp(3rem, 8.2vw, 7.5rem);
+line-height: 0.9;
+text-wrap: balance;
+}
+
+.contact-actions > a {
+max-width: 100%;
+}
+
+.contact-email span {
+overflow-wrap: anywhere;
+}
+
+@media (max-width: 767.98px) {
+.hero-section {
+min-height: auto;
+padding-top: 7rem;
+padding-bottom: 4rem;
+}
+
+.hero-grid {
+grid-template-columns: minmax(0, 1fr);
+width: 100%;
+}
+
+.hero-grid > * {
+min-width: 0;
+max-width: 100%;
+}
+
+.hero-title {
+font-size: clamp(3rem, 13vw, 4.25rem);
+line-height: 0.92;
+max-width: 100%;
+}
+
+.contact-actions,
+.contact-actions > a {
+width: 100%;
+}
+
+.scroll-indicator {
+display: none;
+}
+}
 
 /* Skip link and focus ring, added for keyboard and screen-reader users.
    The skip link is visible only on focus. It uses the darkened accent, since
@@ -542,13 +548,13 @@ i8<span class="text-[var(--text-muted)]">Designs</span>
 </div>
 
 <!-- Hero Section - REDESIGNED: Stronger hierarchy, front-loaded value, generous spacing -->
-<section class="relative min-h-screen flex items-center pt-32 pb-20 px-6 lg:px-12 overflow-hidden grid-pattern">
+<section class="hero-section relative min-h-screen flex items-center pt-32 pb-20 px-6 lg:px-12 overflow-hidden grid-pattern">
 <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
 <h1 class="text-[25vw] font-[var(--font-display)] font-bold tracking-tighter select-none">i8</h1>
 </div>
 
 <div class="container mx-auto max-w-7xl relative z-10">
-<div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+<div class="hero-grid grid lg:grid-cols-12 gap-12 lg:gap-16">
 <!-- Main Content - IMPROVED: Clearer hierarchy, better spacing -->
 <div class="lg:col-span-8">
 <!-- Value Proposition - Front loaded -->
@@ -559,10 +565,10 @@ Custom Design Studio · By Invitation
 </div>
 
 <div class="overflow-hidden mb-8">
-<h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-[var(--font-display)] font-bold leading-[0.9] tracking-tight hero-anim">
+<h1 class="hero-title font-[var(--font-display)] font-bold tracking-tight hero-anim">
 Brand,<br>
 <span class="text-[var(--text-muted)]">Web &</span><br>
-Visual Systems
+Visual<span class="hidden sm:inline"> </span><br class="sm:hidden">Systems
 </h1>
 </div>
 
@@ -585,7 +591,11 @@ See work
 </div>
 
 <!-- Side Focus Areas - IMPROVED: Scannable, adds credibility -->
-<div class="lg:col-span-4 hidden lg:block">
+<div class="hero-aside lg:col-span-4 hidden lg:block">
+<div class="hero-index hero-anim">
+<span>Independent practice</span>
+<span>01 / 04</span>
+</div>
 <div class="space-y-8 border-l-2 border-[var(--border)] pl-8 hero-anim">
 <div>
 <div class="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">Background</div>
@@ -629,7 +639,7 @@ See work
 </div>
 
 <!-- Scroll Indicator - IMPROVED: Better positioning -->
-<div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 opacity-50">
+<div class="scroll-indicator absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 opacity-50">
 <span class="text-xs uppercase tracking-widest font-medium">Scroll to explore</span>
 <div class="w-px h-16 bg-[var(--text-muted)] relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-1/2 bg-[var(--accent)] animate-pulse"></div>
@@ -650,7 +660,7 @@ See work
 </section>
 
 <!-- Selected Work - REDESIGNED: Better grid, clearer hierarchy, improved spacing -->
-<section id="work" class="px-6 lg:px-12">
+<section id="work" class="px-6 lg:px-12 py-20 md:py-28">
 <div class="container mx-auto max-w-7xl">
 <!-- Section Header - IMPROVED: Stronger hierarchy -->
 <div class="section-header flex flex-col md:flex-row md:items-end md:justify-between gap-6">
@@ -793,7 +803,7 @@ Start a project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
 </section>
 
 <!-- Studio Section - REDESIGNED: Better content flow, scannable layout -->
-<section id="studio" class="px-6 lg:px-12 bg-[var(--bg-secondary)]">
+<section id="studio" class="px-6 lg:px-12 py-20 md:py-28 bg-[var(--bg-secondary)]">
 <div class="container mx-auto max-w-7xl">
 <div class="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
 <!-- Visual Side - IMPROVED: Better proportions -->
@@ -934,7 +944,7 @@ Let's create<br>
 <p class="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto mb-12">
 Custom brand, web, and product engagements from $2,500. Need a full iOS or web app built? Those run through my product studio, CodeMode, from $5,000. Tell me what you're working on, and I usually reply within 24 hours.
 </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<div class="contact-actions flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center items-center">
 <a href="/start.html" class="magnetic-btn inline-flex items-center justify-center gap-3 px-10 py-5 bg-[var(--accent)] text-[var(--bg-primary)] font-medium text-lg rounded-[var(--radius)] hover:bg-[var(--accent-hover)] transition-all mobile-tap" data-magnetic>
 Start a project <i data-lucide="arrow-right" class="w-5 h-5"></i>
 </a>
@@ -942,7 +952,7 @@ Start a project <i data-lucide="arrow-right" class="w-5 h-5"></i>
 <i data-lucide="calendar" class="w-5 h-5"></i>
 <span class="font-medium">Book a call</span>
 </a>
-<a href="mailto:douglasrichman1@gmail.com" class="magnetic-btn inline-flex items-center justify-center gap-3 px-8 py-5 border-2 border-[var(--border-strong)] rounded-[var(--radius)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all text-base mobile-tap" data-magnetic>
+<a href="mailto:douglasrichman1@gmail.com" class="contact-email magnetic-btn inline-flex items-center justify-center gap-3 px-8 py-5 border-2 border-[var(--border-strong)] rounded-[var(--radius)] hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all text-base mobile-tap" data-magnetic>
 <i data-lucide="mail" class="w-5 h-5"></i>
 <span class="font-medium">douglasrichman1@gmail.com</span>
 </a>
